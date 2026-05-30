@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Delta Connector — The agentic trust network for Berlin's startup ecosystem" },
-      { name: "description", content: "Find trusted startup answers, people, and resources in Berlin before asking another WhatsApp group. Peer-validated, agentic, privacy-first." },
+      { name: "description", content: "Connect to the people you need, connect, and succeed faster. Berlin's peer-validated, agentic, privacy-first founder network." },
       { property: "og:title", content: "Delta Connector" },
       { property: "og:description", content: "The agentic trust network for Berlin's startup ecosystem." },
     ],
@@ -60,6 +60,22 @@ function Header() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
+      {/* Berlin skyline from the Victory Column — Reichstag, Fernsehturm (center), Brandenburg Gate.
+          Source: "Cityscape Berlin.jpg" by Thomas Wolf (www.foto-tw.de), CC BY-SA 3.0, via Wikimedia Commons. */}
+      <div
+        className="absolute inset-0 -z-20 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Cityscape_Berlin.jpg/1920px-Cityscape_Berlin.jpg')",
+        }}
+      />
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(to bottom, color-mix(in srgb, var(--color-background) 50%, transparent) 0%, color-mix(in srgb, var(--color-background) 80%, transparent) 55%, var(--color-background) 100%)",
+        }}
+      />
       <div className="absolute inset-0 -z-10 opacity-[0.06]" style={{
         backgroundImage: "radial-gradient(circle at 1px 1px, var(--color-foreground) 1px, transparent 0)",
         backgroundSize: "24px 24px",
@@ -70,8 +86,8 @@ function Hero() {
             <Sparkles className="size-3" /> Built for Berlin's founder ecosystem
           </Badge>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">
-            Find trusted startup answers, people, and resources{" "}
-            <span className="text-gradient-agentic">before asking another WhatsApp group.</span>
+            Connect to the people you need.{" "}
+            <span className="text-gradient-agentic">Succeed faster.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-xl">
             Delta Connector turns Berlin's hidden founder knowledge into a searchable,
