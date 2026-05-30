@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Home, Search, User, UserPlus, Network, LayoutDashboard, Sparkles } from "lucide-react";
+import { Home, Search, User, UserPlus, Network, LayoutDashboard } from "lucide-react";
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarMenu,
   SidebarMenuButton, SidebarMenuItem, SidebarHeader, SidebarFooter,
@@ -22,9 +22,11 @@ export function AppSidebar() {
     <Sidebar collapsible="icon">
       <SidebarHeader className="border-b border-sidebar-border">
         <Link to="/" className="flex items-center gap-2 px-2 py-3">
-          <div className="size-8 rounded-md gradient-agentic grid place-items-center text-white">
-            <Sparkles className="size-4" />
-          </div>
+          <img
+            src="/delta-triangle-logo-transparent.png"
+            alt="Delta Connector"
+            className="size-8 object-contain shrink-0"
+          />
           <div className="flex flex-col leading-tight group-data-[collapsible=icon]:hidden">
             <span className="text-sm font-semibold text-sidebar-foreground">Delta Connector</span>
             <span className="text-[10px] text-sidebar-foreground/60">Berlin Founder Graph</span>

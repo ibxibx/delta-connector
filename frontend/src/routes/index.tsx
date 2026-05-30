@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { Sparkles, ArrowRight, Check, MessageCircle, Send, Search, Network, TrendingUp, Shield } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Sparkles, ArrowRight, Check, MessageCircle, Send, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -22,10 +22,6 @@ function Landing() {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
-      <ValueCards />
-      <HowItWorks />
-      <Differentiators />
-      <Footer />
     </div>
   );
 }
@@ -35,17 +31,13 @@ function Header() {
     <header className="sticky top-0 z-40 backdrop-blur bg-background/80 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center gap-8">
         <Link to="/" className="flex items-center gap-2">
-          <div className="size-8 rounded-md gradient-agentic grid place-items-center text-white">
-            <Sparkles className="size-4" />
-          </div>
+          <img
+            src="/delta-triangle-logo-transparent.png"
+            alt="Delta Connector"
+            className="size-8 object-contain"
+          />
           <span className="font-semibold tracking-tight">Delta Connector</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-          <a href="#product" className="hover:text-foreground">Product</a>
-          <a href="#how" className="hover:text-foreground">How it works</a>
-          <a href="#graph" className="hover:text-foreground">Trust Graph</a>
-          <a href="#stakeholders" className="hover:text-foreground">For Stakeholders</a>
-        </nav>
         <div className="ml-auto flex items-center gap-2">
           <Button asChild variant="ghost" size="sm"><Link to="/home">View Demo</Link></Button>
           <Button asChild size="sm" className="bg-primary hover:bg-primary-hover">
@@ -58,36 +50,52 @@ function Header() {
 }
 
 function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Browsers can defer autoplay; force playback once the element is mounted.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
+    v.addEventListener("canplay", tryPlay, { once: true });
+    return () => v.removeEventListener("canplay", tryPlay);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden">
-      {/* Berlin skyline from the Victory Column — Reichstag, Fernsehturm (center), Brandenburg Gate.
-          Source: "Cityscape Berlin.jpg" by Thomas Wolf (www.foto-tw.de), CC BY-SA 3.0, via Wikimedia Commons. */}
-      <div
-        className="absolute inset-0 -z-20 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Cityscape_Berlin.jpg/1920px-Cityscape_Berlin.jpg')",
-        }}
+    <section className="relative isolate overflow-hidden min-h-[calc(100vh-4rem)]">
+      {/* Looping hero background video, faded ~50% into the page background */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 z-0 h-full w-full object-cover"
+        src="/hero-background.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
       />
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 z-[1]"
         style={{
           background:
             "linear-gradient(to bottom, color-mix(in srgb, var(--color-background) 50%, transparent) 0%, color-mix(in srgb, var(--color-background) 80%, transparent) 55%, var(--color-background) 100%)",
         }}
       />
-      <div className="absolute inset-0 -z-10 opacity-[0.06]" style={{
+      <div className="absolute inset-0 z-[1] opacity-[0.06]" style={{
         backgroundImage: "radial-gradient(circle at 1px 1px, var(--color-foreground) 1px, transparent 0)",
         backgroundSize: "24px 24px",
       }} />
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-16 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-[2] max-w-7xl mx-auto px-6 pt-20 pb-16 grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <Badge variant="outline" className="mb-5 gap-1.5 border-primary/20 bg-primary/5 text-primary">
             <Sparkles className="size-3" /> Built for Berlin's founder ecosystem
           </Badge>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">
             Connect to the people you need.{" "}
-            <span className="text-gradient-agentic">Succeed faster.</span>
+            <span className="block text-gradient-agentic">Succeed faster.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-xl">
             Delta Connector turns Berlin's hidden founder knowledge into a searchable,
@@ -102,9 +110,9 @@ function Hero() {
             </Button>
           </div>
           <div className="mt-8 flex items-center gap-6 text-xs text-muted-foreground">
-            <div className="flex items-center gap-1.5"><Shield className="size-3.5" /> Privacy-first by design</div>
+            <div className="flex items-center gap-1.5"><Check className="size-3.5 text-success" /> Privacy-first by design</div>
             <div className="flex items-center gap-1.5"><Check className="size-3.5 text-success" /> Peer-validated</div>
-            <div className="flex items-center gap-1.5"><TrendingUp className="size-3.5" /> Compounding value</div>
+            <div className="flex items-center gap-1.5"><Check className="size-3.5 text-success" /> Compounding value</div>
           </div>
         </div>
         <HeroDemo />
@@ -190,103 +198,5 @@ function HeroDemo() {
         </div>
       </Card>
     </div>
-  );
-}
-
-function ValueCards() {
-  const items = [
-    { icon: Search, title: "Ask better questions", desc: "Get previous trusted answers before posting publicly." },
-    { icon: Network, title: "Find trusted people", desc: "See peer-validated providers, mentors, investors, and ecosystem nodes." },
-    { icon: TrendingUp, title: "Grow the ecosystem", desc: "Every answer, validation, and recommendation improves the next founder's starting point." },
-  ];
-  return (
-    <section id="product" className="border-t bg-elevated/50">
-      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-6">
-        {items.map((it) => (
-          <Card key={it.title} className="p-6 bg-surface">
-            <div className="size-10 rounded-md gradient-agentic grid place-items-center text-white mb-4">
-              <it.icon className="size-5" />
-            </div>
-            <h3 className="text-lg font-semibold">{it.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
-          </Card>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function HowItWorks() {
-  const steps = [
-    { n: 1, t: "Sign up", d: "Create profile & select role" },
-    { n: 2, t: "Tell us about you", d: "Your startup stage, needs, context" },
-    { n: 3, t: "Recommend 3–8 people", d: "Who helped you or could help others" },
-    { n: 4, t: "Invitations sent", d: "They're invited to join the network" },
-    { n: 5, t: "Enter the network", d: "Access graph, insights, resources" },
-  ];
-  return (
-    <section id="how" className="border-t">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="max-w-2xl">
-          <Badge variant="outline" className="mb-3">Flow 1 — Give Before You Get</Badge>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Join, contribute, build trust.</h2>
-          <p className="mt-3 text-muted-foreground">Every contribution makes the next founder's journey easier.</p>
-        </div>
-        <div className="mt-10 grid md:grid-cols-5 gap-4">
-          {steps.map((s) => (
-            <div key={s.n} className="relative">
-              <div className="size-9 rounded-full gradient-agentic text-white grid place-items-center font-semibold text-sm">{s.n}</div>
-              <div className="mt-3 font-medium text-sm">{s.t}</div>
-              <div className="text-xs text-muted-foreground mt-1">{s.d}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Differentiators() {
-  const items = [
-    { t: "Give Before You Get", d: "Access by contributing real value" },
-    { t: "Trust over Hype", d: "Peer-validated, context-rich recommendations" },
-    { t: "Agentic by Design", d: "AI helps you find, act and connect" },
-    { t: "Multi-Stakeholder", d: "Founders, providers, investors, institutions" },
-    { t: "Actionable Insights", d: "Personal metrics and improvement tips" },
-    { t: "Privacy First", d: "You control your data and visibility" },
-  ];
-  return (
-    <section id="graph" className="bg-navy text-navy-foreground">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="text-xs uppercase tracking-widest text-navy-foreground/60">Key differentiators</div>
-        <div className="mt-6 grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {items.map((i) => (
-            <div key={i.t}>
-              <div className="font-medium text-sm">{i.t}</div>
-              <div className="mt-1 text-xs text-navy-foreground/60">{i.d}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer id="stakeholders" className="border-t">
-      <div className="max-w-7xl mx-auto px-6 py-10 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-        <div className="flex items-center gap-2">
-          <div className="size-6 rounded gradient-agentic" />
-          <span>© 2025 Delta Connector — Berlin's founder graph</span>
-        </div>
-        <div className="flex gap-4">
-          <a href="#" className="hover:text-foreground">Privacy</a>
-          <a href="#" className="hover:text-foreground">Terms</a>
-          <a href="#" className="hover:text-foreground">For Stakeholders</a>
-          <Link to="/onboarding" className="text-primary hover:underline">Join the network</Link>
-        </div>
-      </div>
-    </footer>
   );
 }
