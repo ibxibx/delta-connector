@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="pics/delta-connector-logo.png" alt="Delta Connector logo" width="240">
+  <img src="pics/delta-connector-logo.png" alt="Delta Connector logo" width="440">
 </p>
 
 <h1 align="center">Delta Connector</h1>
