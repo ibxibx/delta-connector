@@ -5,6 +5,7 @@ and composes the response per the API contract (docs/API_CONTRACT.md).
 """
 from __future__ import annotations
 import json
+import os
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -18,8 +19,13 @@ from agents.outreach import draft_follow_up
 from agents.metrics import compute_metrics, record_fit
 
 app = FastAPI(title="Delta-Connector API")
+
+# CORS: defaults to "*" for local dev; set ALLOWED_ORIGINS (comma-separated) in
+# production to lock it to the deployed Lovable frontend domain.
+_origins = os.environ.get("ALLOWED_ORIGINS", "*")
+_origin_list = ["*"] if _origins.strip() == "*" else [o.strip() for o in _origins.split(",")]
 app.add_middleware(
-    CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
+    CORSMiddleware, allow_origins=_origin_list, allow_methods=["*"], allow_headers=["*"]
 )
 
 _DATA_PATH = Path(__file__).parent / "data" / "seed.json"

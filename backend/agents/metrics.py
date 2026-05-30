@@ -87,18 +87,18 @@ def _coach_tip(a: dict, score: int) -> str:
 
 def record_fit(answer_id: str) -> dict:
     """A user marked an answer as fitting: bump fit + helpfulness (PRD §15.5).
-    Persists to answers.json so the demo dashboard visibly moves."""
+    The disk file holds the baseline; an in-memory overlay holds this session's
+    bumps so the demo works on ephemeral/read-only hosts and never double-counts."""
+    from agents import fit_store
     path = Path(__file__).parent.parent / "data" / "answers.json"
     data = json.loads(path.read_text(encoding="utf-8"))
     for ans in data["answers"]:
         if ans["id"] == answer_id:
-            ans["fit_confirmations"] += 1
-            ans["helpfulness_count"] += 1
-            path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+            bumps = fit_store.bump(answer_id)  # session bumps for this answer
             return {
                 "status": "recorded",
                 "answer_id": answer_id,
-                "fit_confirmations": ans["fit_confirmations"],
-                "helpfulness_count": ans["helpfulness_count"],
+                "fit_confirmations": ans["fit_confirmations"] + bumps,
+                "helpfulness_count": ans["helpfulness_count"] + bumps,
             }
     return {"status": "not_found", "answer_id": answer_id}

@@ -105,17 +105,18 @@ def test_metrics_public_badge_requires_threshold():
     assert maya["public_badge_eligible"] is False
 
 
-def test_record_fit_bumps_and_restores():
-    # mutate then restore answers.json so the test is idempotent
-    path = Path(__file__).parent.parent / "backend" / "data" / "answers.json"
-    before = path.read_text(encoding="utf-8")
-    try:
-        res = record_fit("answer_001")
-        assert res["status"] == "recorded"
-        assert res["fit_confirmations"] == 9   # was 8
-        assert res["helpfulness_count"] == 13  # was 12
-    finally:
-        path.write_text(before, encoding="utf-8")
+def test_record_fit_bumps_via_overlay():
+    # disk baseline is unchanged; the in-memory overlay holds the bump (deploy-safe)
+    from agents import fit_store
+    fit_store._bumps.clear()
+    res = record_fit("answer_001")
+    assert res["status"] == "recorded"
+    assert res["fit_confirmations"] == 9   # baseline 8 + 1 overlay
+    assert res["helpfulness_count"] == 13  # baseline 12 + 1 overlay
+    # second bump accumulates, no double-count from disk writes
+    res2 = record_fit("answer_001")
+    assert res2["fit_confirmations"] == 10
+    fit_store._bumps.clear()
 
 
 def test_record_fit_unknown_answer():
