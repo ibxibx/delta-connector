@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
-import { answers, stakeholders } from "@/lib/mock-data";
+import { ask as askApi, answerFits, followUpDraft, type UiAnswer } from "@/lib/api/delta";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_app/ask")({
@@ -24,17 +24,44 @@ function Ask() {
   const [fitted, setFitted] = useState<Record<string, boolean>>({});
   const [followupOpen, setFollowupOpen] = useState<string | null>(null);
   const [postOpen, setPostOpen] = useState(false);
+  const [results, setResults] = useState<UiAnswer[]>([]);
+  const [counts, setCounts] = useState<Record<string, number>>({});
 
+  // animate the staged loading messages while the request is in flight
   useEffect(() => {
     if (phase !== "processing") return;
     setStageIdx(0);
     const ivs: ReturnType<typeof setTimeout>[] = [];
     stages.forEach((_, i) => ivs.push(setTimeout(() => setStageIdx(i), i * 450)));
-    ivs.push(setTimeout(() => setPhase("results"), stages.length * 450 + 150));
     return () => ivs.forEach(clearTimeout);
   }, [phase]);
 
-  const submit = () => setPhase("processing");
+  const submit = async () => {
+    setPhase("processing");
+    try {
+      const { answers: got } = await askApi(q, { stage: "pre-seed", industry: "AI SaaS" });
+      // keep the loading visible briefly so it reads as "agents working"
+      await new Promise((r) => setTimeout(r, 900));
+      setResults(got);
+      setCounts(Object.fromEntries(got.map((a) => [a.id, a.helpfulFor])));
+      setPhase("results");
+      if (got.length === 0) toast("No previous answers fit — you can post publicly.");
+    } catch (e) {
+      setPhase("idle");
+      toast.error("Couldn't reach the answer service", { description: String(e) });
+    }
+  };
+
+  const markFits = async (a: UiAnswer) => {
+    setFitted((f) => ({ ...f, [a.id]: true }));
+    try {
+      const res = await answerFits(a.id);
+      setCounts((c) => ({ ...c, [a.id]: res.helpfulness_count }));
+      toast.success("Answer saved to your workspace", { description: "This also improves the answer's helpfulness score." });
+    } catch (e) {
+      toast.error("Couldn't record that", { description: String(e) });
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -69,10 +96,9 @@ function Ask() {
 
       {phase === "results" && (
         <>
-          <div className="text-xs text-muted-foreground">Showing 3 suggested answers · ranked by trust & helpfulness</div>
+          <div className="text-xs text-muted-foreground">Showing {results.length} suggested answer{results.length === 1 ? "" : "s"} · ranked by trust & helpfulness</div>
           <div className="space-y-4">
-            {answers.map((a) => {
-              const provider = stakeholders.find((s) => s.id === a.providerId)!;
+            {results.map((a) => {
               const isFitted = fitted[a.id];
               return (
                 <Card key={a.id} className="p-5">
@@ -84,34 +110,34 @@ function Ask() {
                         <Badge variant="outline" className="text-[10px]">Stage fit: {a.stageFit.join(", ")}</Badge>
                       </div>
                     </div>
-                    <Badge className="bg-success/10 text-success border-success/20 shrink-0">{a.helpfulnessPct}% Helpful</Badge>
+                    <Badge className="bg-success/10 text-success border-success/20 shrink-0">{a.helpfulnessPct}% match</Badge>
                   </div>
                   <p className="mt-3 text-sm text-foreground/90 leading-relaxed">{a.answer}</p>
 
                   <div className="mt-4 rounded-md bg-elevated p-3 grid sm:grid-cols-3 gap-3 text-xs">
-                    <Evidence icon={<ThumbsUp className="size-3.5" />} label={`Helpful for ${a.helpfulFor} founders`} />
-                    <Evidence icon={<Check className="size-3.5" />} label={`${a.fitConfirmations} fit confirmations`} />
-                    <Evidence icon={<ShieldCheck className="size-3.5" />} label={`Verified ${a.categories[0]} contributor`} />
+                    <Evidence icon={<ThumbsUp className="size-3.5" />} label={`Helpful for ${counts[a.id] ?? a.helpfulFor} founders`} />
+                    <Evidence icon={<ShieldCheck className="size-3.5" />} label={a.trustEvidence} />
+                    <Evidence icon={<Check className="size-3.5" />} label={a.reasons[0] ?? `Verified ${a.categories[0]}`} />
                   </div>
 
                   <div className="mt-4 flex items-center justify-between border-t pt-4">
                     <div className="flex items-center gap-2.5 min-w-0">
                       <div className="size-8 rounded-full bg-gradient-to-br from-primary to-accent-purple grid place-items-center text-white text-[10px] font-semibold">
-                        {isFitted ? provider.initials : "?"}
+                        ?
                       </div>
                       <div className="min-w-0">
                         <div className="text-sm font-medium truncate">
-                          {isFitted ? provider.name : "Provider hidden until you confirm fit"}
+                          {isFitted ? "Provider available for follow-up" : "Provider hidden until you confirm fit"}
                         </div>
                         <div className="text-xs text-muted-foreground truncate">
-                          {isFitted ? `${provider.labels[0]} · Opted into follow-ups` : a.providerAnonymized}
+                          {a.providerAnonymized}
                         </div>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {!isFitted ? (
                         <>
-                          <Button size="sm" className="bg-success hover:bg-success/90 text-white" onClick={() => { setFitted({ ...fitted, [a.id]: true }); toast.success("Answer saved to your workspace", { description: "This also improves the answer's helpfulness score." }); }}>
+                          <Button size="sm" className="bg-success hover:bg-success/90 text-white" onClick={() => markFits(a)}>
                             <Check className="size-3.5" /> This answer fits
                           </Button>
                           <Button size="sm" variant="ghost" onClick={() => toast("Saved")}><Bookmark className="size-3.5" /> Save</Button>
