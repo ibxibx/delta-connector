@@ -128,9 +128,9 @@ function NetworkPage() {
 
       <div className="grid lg:grid-cols-[1fr_320px] gap-6">
         {/* Lens */}
-        <div className={`relative rounded-3xl border overflow-hidden shadow-2xl shadow-primary/10 ${search.lens === "list" ? "bg-surface/60" : "bg-[#05060d]"}`}>
+        <div className={`relative rounded-3xl border overflow-hidden shadow-2xl shadow-primary/10 ${search.lens === "list" ? "bg-surface/60" : "bg-white"}`}>
           {search.lens === "graph" && (
-            <div className="absolute top-3 left-3 z-10 rounded-xl border border-white/10 bg-black/50 backdrop-blur px-3 py-2 text-[11px] text-white/80 space-y-1">
+            <div className="absolute top-3 left-3 z-10 rounded-xl border border-border bg-white/80 backdrop-blur px-3 py-2 text-[11px] text-foreground/80 space-y-1">
               <LegendRow color="bg-accent-purple" label="You · Berlin" />
               <LegendRow color="bg-primary" label="1st degree" />
               <LegendRow color="bg-success" label="Active now" />

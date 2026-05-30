@@ -1,4 +1,10 @@
+# Render Blueprint for Delta Connector.
+# Deploy both services from this repo: New + > Blueprint > pick this repo.
+# After first deploy, set the two cross-URLs (see DEPLOY.md):
+#   - delta-connector-api  -> ALLOWED_ORIGINS = https://<frontend-url>
+#   - delta-connector-web  -> VITE_API_BASE   = https://<backend-url>
 services:
+  # ---- FastAPI backend ----
   - type: web
     name: delta-connector-api
     runtime: python
@@ -10,4 +16,18 @@ services:
       - key: PYTHON_VERSION
         value: "3.12.3"
       - key: ALLOWED_ORIGINS
-        sync: false   # set to your Lovable frontend URL in the Render dashboard
+        sync: false   # set to your deployed frontend URL in the Render dashboard
+
+  # ---- TanStack Start frontend (SSR Node server) ----
+  - type: web
+    name: delta-connector-web
+    runtime: node
+    rootDir: frontend
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node dist/server/index.mjs
+    envVars:
+      - key: NODE_VERSION
+        value: "22.17.0"
+      - key: VITE_API_BASE
+        sync: false   # set to your deployed backend URL (https://delta-connector-api...onrender.com)
