@@ -52,8 +52,8 @@ function Onboarding() {
             <h1 className="text-2xl font-semibold tracking-tight">Tell us who you are</h1>
             <p className="text-sm text-muted-foreground mt-1">We use this to route trusted answers and people to you.</p>
             <div className="mt-6 grid md:grid-cols-2 gap-4">
-              <Field label="Name"><Input defaultValue="Maya Chen" /></Field>
-              <Field label="Email"><Input defaultValue="maya@example.com" /></Field>
+              <Field label="Name"><Input defaultValue="Marco Bianchi" /></Field>
+              <Field label="Email"><Input defaultValue="marco@example.com" /></Field>
               <Field label="Location"><Input defaultValue="Berlin" /></Field>
               <Field label="Preferred language">
                 <Select defaultValue="en">

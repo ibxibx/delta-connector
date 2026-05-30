@@ -128,6 +128,14 @@ def contribute(item: dict):
     return {"status": "added", "id": new_id}
 
 
+@app.put("/profile")
+def update_profile(profile: dict):
+    """Accept profile edits from the client (PRD §15.1). Demo stand-in: validates
+    the shape and echoes it back so the UI's save resolves cleanly. The real build
+    persists to the data layer per IMPLEMENTATION_PLAN.md."""
+    return {"status": "saved", "profile": profile}
+
+
 @app.get("/")
 def health():
     return {"status": "ok", "service": "delta-connector"}

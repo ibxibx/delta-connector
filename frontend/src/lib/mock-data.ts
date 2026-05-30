@@ -5,7 +5,7 @@ export type StakeholderType =
   | "Relocation / Housing Partner" | "Other Helper";
 
 export const currentUser = {
-  name: "Maya Chen",
+  name: "Marco Bianchi",
   role: "Founder",
   company: "AI SaaS",
   stage: "Pre-Seed",
@@ -17,7 +17,7 @@ export const currentUser = {
   networkReach: 1248,
   categoryCoverage: { covered: 7, total: 16 },
   savedAnswers: 4,
-  initials: "MC",
+  initials: "MB",
 };
 
 export type Stakeholder = {
@@ -93,7 +93,7 @@ export const initialRecommendations = [
 ];
 
 export const receivedRecommendations = [
-  { id: "rr1", from: "Anonymized Founder", category: "AI Product", help: "Maya gave deep feedback on our AI agent architecture", impact: 5 },
+  { id: "rr1", from: "Anonymized Founder", category: "AI Product", help: "Marco gave deep feedback on our AI agent architecture", impact: 5 },
   { id: "rr2", from: "Anonymized Founder", category: "Pitch", help: "Helped me sharpen my pre-seed pitch", impact: 4 },
 ];
 
@@ -107,7 +107,7 @@ export const radarData = [
 ];
 
 export const graphNodes = [
-  { id: "you", name: "Maya Chen", type: "Founder" as const, x: 50, y: 50, role: "You" },
+  { id: "you", name: "Marco Bianchi", type: "Founder" as const, x: 50, y: 50, role: "You" },
   { id: "alex", name: "Alex Weber", type: "Service Provider" as const, x: 50, y: 12, role: "Tax Advisor" },
   { id: "anna", name: "Anna Roth", type: "Service Provider" as const, x: 88, y: 32, role: "Startup Lawyer" },
   { id: "sarah", name: "Sarah Kim", type: "Service Provider" as const, x: 12, y: 32, role: "Recruiter" },

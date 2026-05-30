@@ -30,6 +30,7 @@ previous answers as MatchResult cards with anonymized trust evidence. If none fi
       "matched_type": "answer",
       "matched_id": "answer_001",
       "match_score": 0.99,
+      "question_text": "Which tax advisor is good for a VC-backed GmbH in Berlin?",
       "answer_summary": "For a VC-backed GmbH, choose a tax advisor with DATEV...",
       "category": "Tax/Admin",
       "stage_fit": "pre-seed",
@@ -43,8 +44,8 @@ previous answers as MatchResult cards with anonymized trust evidence. If none fi
 }
 ```
 
-Frontend maps each `answers[]` item directly onto `AnimatedAnswerCard` (summary, category, stage_fit,
-helpfulness_count, trust_evidence). `match_score` renders as a confidence bar.
+Frontend maps each `answers[]` item directly onto `AnimatedAnswerCard` (question, summary, category,
+stage_fit, helpfulness_count, trust_evidence). `match_score` renders as a confidence/match bar.
 
 ---
 

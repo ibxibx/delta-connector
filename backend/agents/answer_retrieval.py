@@ -11,6 +11,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from agents import fit_store
+
 _ANSWERS = json.loads((Path(__file__).parent.parent / "data" / "answers.json").read_text(encoding="utf-8"))["answers"]
 
 # Industry/sphere keywords present in the dataset's help_categories.
@@ -75,10 +77,13 @@ def retrieve_answers(query: str, profile: dict | None = None, limit: int = 3) ->
             score += 0.10
             reasons.append(f"Relevant to {a['stage_context']}")
 
-        # helpfulness as a tiebreaker, lightly weighted
-        score += min(a["helpfulness_count"] / 100.0, 0.10)
-        if a["helpfulness_count"] >= 10:
-            reasons.append(f"Helpful for {a['helpfulness_count']} founders")
+        # helpfulness as a tiebreaker, lightly weighted. Apply the session
+        # fit_store overlay so re-queries reflect /answer-fits bumps (matches
+        # what record_fit returns and what the card optimistically shows).
+        helpfulness_count = a["helpfulness_count"] + fit_store.get(a["id"])
+        score += min(helpfulness_count / 100.0, 0.10)
+        if helpfulness_count >= 10:
+            reasons.append(f"Helpful for {helpfulness_count} founders")
 
         if score <= 0:
             continue
@@ -88,10 +93,11 @@ def retrieve_answers(query: str, profile: dict | None = None, limit: int = 3) ->
             "matched_type": "answer",
             "matched_id": a["id"],
             "match_score": round(min(score, 0.99), 2),
+            "question_text": a.get("question_text", ""),
             "answer_summary": a["answer_text"],
             "category": ", ".join(a["help_categories"]),
             "stage_fit": a["stage_context"],
-            "helpfulness_count": a["helpfulness_count"],
+            "helpfulness_count": helpfulness_count,
             "trust_evidence": a["trust_evidence"],  # anonymized; no provider identity
             "reasons": reasons,
             "next_action": "Mark as fitting or request follow-up",

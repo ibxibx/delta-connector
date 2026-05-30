@@ -25,11 +25,12 @@ function Recommend() {
 
   const submit = async () => {
     if (!form.name.trim()) return toast.error("Add a name first");
-    const payload = { name: form.name, category: form.category, impact: Number(form.impact), why: form.why };
+    // /contribute is the live endpoint: it persists a recommendation to the seed graph.
+    const payload = { name: form.name, field: form.category, impact: Number(form.impact), note: form.why };
     try {
-      await api.post("/recommendations", payload);
+      await api.post("/contribute", payload);
     } catch {
-      /* offline ok */
+      /* offline ok — fall back to optimistic UI */
     }
     setGiven([
       { id: `r${Date.now()}`, name: form.name, category: form.category, impact: Number(form.impact), status: "Pending invite", visibility: "Private" },

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { ask as askApi, answerFits, followUpDraft, type UiAnswer } from "@/lib/api/delta";
+import { currentUser } from "@/lib/mock-data";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_app/ask")({
@@ -39,7 +40,7 @@ function Ask() {
   const submit = async () => {
     setPhase("processing");
     try {
-      const { answers: got } = await askApi(q, { stage: "pre-seed", industry: "AI SaaS" });
+      const { answers: got } = await askApi(q, { stage: "pre-seed", industry: "saas" });
       // keep the loading visible briefly so it reads as "agents working"
       await new Promise((r) => setTimeout(r, 900));
       setResults(got);
@@ -104,13 +105,15 @@ function Ask() {
                 <Card key={a.id} className="p-5">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h3 className="font-semibold">{a.question.replace("?", "")}</h3>
+                      <h3 className="font-semibold">{a.question}</h3>
                       <div className="mt-1 flex flex-wrap gap-1.5">
                         {a.categories.map((c) => <Badge key={c} variant="secondary" className="text-[10px]">{c}</Badge>)}
-                        <Badge variant="outline" className="text-[10px]">Stage fit: {a.stageFit.join(", ")}</Badge>
+                        {a.stageFit.some((s) => s && s.toLowerCase() !== "any") && (
+                          <Badge variant="outline" className="text-[10px]">Stage fit: {a.stageFit.filter((s) => s.toLowerCase() !== "any").join(", ")}</Badge>
+                        )}
                       </div>
                     </div>
-                    <Badge className="bg-success/10 text-success border-success/20 shrink-0">{a.helpfulnessPct}% match</Badge>
+                    <Badge className="bg-success/10 text-success border-success/20 shrink-0">{a.matchPct}% match</Badge>
                   </div>
                   <p className="mt-3 text-sm text-foreground/90 leading-relaxed">{a.answer}</p>
 
@@ -172,7 +175,10 @@ function Ask() {
         </>
       )}
 
-      <FollowupModal open={!!followupOpen} onClose={() => setFollowupOpen(null)} />
+      <FollowupModal
+        answer={results.find((a) => a.id === followupOpen) ?? null}
+        onClose={() => setFollowupOpen(null)}
+      />
       <PostPublicModal open={postOpen} onClose={() => setPostOpen(false)} question={q} />
     </div>
   );
@@ -182,10 +188,45 @@ function Evidence({ icon, label }: { icon: React.ReactNode; label: string }) {
   return <div className="flex items-center gap-1.5 text-muted-foreground">{icon} <span>{label}</span></div>;
 }
 
-function FollowupModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [msg, setMsg] = useState(
-    "Hi Alex, I found your answer about tax advisors for VC-backed GmbHs helpful. I'm building an AI SaaS company in Berlin and preparing for pre-seed. Could I ask one short follow-up about DATEV, payroll, and investor reporting setup?"
-  );
+function FollowupModal({ answer, onClose }: { answer: UiAnswer | null; onClose: () => void }) {
+  const open = !!answer;
+  const [msg, setMsg] = useState("");
+  const [status, setStatus] = useState<"loading" | "drafted" | "consent_required">("loading");
+  const [notice, setNotice] = useState("");
+
+  // Fetch a real consent-gated draft from the Outreach agent when opened.
+  useEffect(() => {
+    if (!answer) return;
+    setStatus("loading");
+    setMsg("");
+    setNotice("");
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await followUpDraft({
+          answerSummary: answer.answer,
+          question: answer.question,
+          askerName: currentUser.name.split(" ")[0],
+          consentOk: true, // user reached this modal by confirming the answer fits
+        });
+        if (cancelled) return;
+        if (res.status === "drafted" && res.draft) {
+          setStatus("drafted");
+          setMsg(res.draft);
+        } else {
+          setStatus("consent_required");
+          setNotice(res.message);
+        }
+      } catch (e) {
+        if (cancelled) return;
+        setStatus("consent_required");
+        setNotice("Couldn't reach the outreach service.");
+        toast.error("Couldn't draft a follow-up", { description: String(e) });
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [answer]);
+
   return (
     <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
       <DialogContent className="max-w-lg">
@@ -195,14 +236,24 @@ function FollowupModal({ open, onClose }: { open: boolean; onClose: () => void }
         </DialogHeader>
         <div className="rounded-md bg-elevated p-3 text-xs space-y-1">
           <div><span className="text-muted-foreground">Context:</span> Pre-Seed · AI SaaS · Non-EU Founder · Berlin</div>
-          <div><span className="text-muted-foreground">Related answer:</span> Startup-ready tax advisor for a VC-backed GmbH</div>
+          <div><span className="text-muted-foreground">Related answer:</span> {answer?.question ?? ""}</div>
         </div>
-        <Textarea value={msg} onChange={(e) => setMsg(e.target.value)} rows={6} />
+        {status === "loading" && <div className="text-xs text-muted-foreground py-4">Drafting your follow-up…</div>}
+        {status === "consent_required" && (
+          <div className="rounded-md border border-warning/30 bg-warning/5 p-3 text-xs text-muted-foreground">{notice}</div>
+        )}
+        {status === "drafted" && <Textarea value={msg} onChange={(e) => setMsg(e.target.value)} rows={6} />}
         <DialogFooter>
           <Button variant="ghost" onClick={onClose}>Cancel</Button>
-          <Button className="bg-primary hover:bg-primary-hover" onClick={() => { toast.success("Follow-up request sent"); onClose(); }}>
-            <Send className="size-4" /> Send request
-          </Button>
+          {status === "consent_required" ? (
+            <Button className="bg-primary hover:bg-primary-hover" onClick={() => { toast.success("Consent request sent — no details shared yet"); onClose(); }}>
+              <Send className="size-4" /> Request consent
+            </Button>
+          ) : (
+            <Button className="bg-primary hover:bg-primary-hover" disabled={status !== "drafted"} onClick={() => { toast.success("Follow-up request sent"); onClose(); }}>
+              <Send className="size-4" /> Send request
+            </Button>
+          )}
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ArrowRight, TrendingUp, Sparkles, CheckCircle2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { currentUser, recentActivity, recommendedNextSteps } from "@/lib/mock-data";
+import { getMetrics, type BackendMetrics } from "@/lib/api/delta";
 
 export const Route = createFileRoute("/_app/home")({
   head: () => ({ meta: [{ title: "Home — Delta Connector" }] }),
@@ -11,6 +13,19 @@ export const Route = createFileRoute("/_app/home")({
 });
 
 function Home() {
+  // Pull the live trust metrics for the demo persona (actor_001) so Home and the
+  // Dashboard show the same numbers. Falls back to mock values if backend is offline.
+  const [metrics, setMetrics] = useState<BackendMetrics | null>(null);
+  useEffect(() => {
+    let live = true;
+    getMetrics("actor_001").then((m) => { if (live) setMetrics(m); }).catch(() => {});
+    return () => { live = false; };
+  }, []);
+
+  const trustScore = metrics?.found ? String(metrics.trust_score) : String(currentUser.trustScore);
+  const contribution = metrics?.found ? String(metrics.metrics["Contribution Score"] ?? currentUser.contributionScore) : String(currentUser.contributionScore);
+  const networkReach = metrics?.found ? String(metrics.metrics["Network Reach"] ?? currentUser.networkReach) : String(currentUser.networkReach);
+
   return (
     <div className="space-y-6">
       <Card className="p-6 bg-gradient-to-br from-primary/5 via-surface to-accent-purple/5 border-primary/10">
@@ -41,10 +56,10 @@ function Home() {
       <section>
         <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">At a glance</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-          <Stat label="Trust Score" value="72" sub="+8 this week" tone="up" total="/ 100" />
-          <Stat label="Contribution" value="58" sub="Top 24%" total="/ 100" />
+          <Stat label="Trust Score" value={trustScore} sub="+8 this week" tone="up" total="/ 100" />
+          <Stat label="Contribution" value={contribution} sub="Top 24%" total="/ 100" />
           <Stat label="Helpfulness" value="4.8" sub="Improving" tone="up" total="/ 5" />
-          <Stat label="Network Reach" value="1,248" sub="people" />
+          <Stat label="Network Reach" value={networkReach} sub="people" />
           <Stat label="Categories" value="7 / 16" sub="covered" />
           <Stat label="Saved answers" value="4" sub="this month" />
         </div>

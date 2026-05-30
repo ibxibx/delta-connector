@@ -19,7 +19,7 @@ const locked = [
 ];
 
 function Dashboard() {
-  // actor_001 = Maya (newcomer); actor_002 = established member (demo contrast)
+  // actor_001 = Marco (newcomer); actor_002 = established member (demo contrast)
   const [actorId, setActorId] = useState("actor_001");
   const [data, setData] = useState<BackendMetrics | null>(null);
 
@@ -41,7 +41,7 @@ function Dashboard() {
           <p className="text-sm text-muted-foreground mt-1">Your private trust metrics and how to grow them.</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant={actorId === "actor_001" ? "default" : "outline"} size="sm" onClick={() => setActorId("actor_001")}>Maya (new)</Button>
+          <Button variant={actorId === "actor_001" ? "default" : "outline"} size="sm" onClick={() => setActorId("actor_001")}>Marco (new)</Button>
           <Button variant={actorId === "actor_002" ? "default" : "outline"} size="sm" onClick={() => setActorId("actor_002")}>Established member</Button>
         </div>
       </div>
