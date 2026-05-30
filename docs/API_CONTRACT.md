@@ -86,6 +86,45 @@ consent-request path and reveals nothing. The agent never sends — the user app
 
 ---
 
+## POST /answer-fits  (PRD §15.5)
+
+User marked an answer as fitting. Bumps fit confirmations + helpfulness so the answer ranks higher
+and the provider's metrics grow. This is the "watch the number move" demo beat.
+
+**Request**: `{ "answer_id": "answer_001" }`
+**Response**: `{ "status": "recorded", "answer_id": "answer_001", "fit_confirmations": 9, "helpfulness_count": 13 }`
+
+---
+
+## GET /metrics?actor_id=...  (PRD §15.10, §16 — private)
+
+Personal metrics + trust score. Private by default (`private: true`). Public badge only above the
+threshold (score ≥ 80, ≥ 8 founder validations, opt-in).
+
+**Response**
+```json
+{
+  "actor_id": "actor_002",
+  "found": true,
+  "trust_score": 92,
+  "trust_level": "Ecosystem authority",
+  "metrics": {
+    "Contribution Score": 15,
+    "Helpfulness Score": 18,
+    "Answer Helpfulness": 18,
+    "Category Authority": 90,
+    "Network Reach": 31,
+    "Recommendation Quality": 4.6,
+    "Follow-Up Value": 7
+  },
+  "public_badge_eligible": true,
+  "private": true,
+  "coach_tip": "Strong standing. Keep contributing answers to grow category authority."
+}
+```
+
+---
+
 ## POST /match  (legacy matcher — champions/mentors)
 
 The core endpoint. A newcomer describes a need; the orchestrator routes it to the champion-matcher and/or mentor-matcher agents and returns ranked results.

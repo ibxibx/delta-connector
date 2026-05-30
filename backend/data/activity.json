@@ -1,0 +1,33 @@
+{
+  "actor_001": {
+    "_name": "Maya (demo persona, new founder)",
+    "recommendations_made": 3,
+    "answers_given": 0,
+    "answer_helpfulness": 0,
+    "founder_validations": 1,
+    "avg_impact_score": 0,
+    "category_fit": 0.2,
+    "stage_context_fit": 0.3,
+    "recency": 1.0,
+    "confirmed": true,
+    "public_opt_in": false,
+    "network_reach": 4,
+    "follow_up_requests_received": 0
+  },
+  "actor_002": {
+    "_name": "Tax-advisor answer provider (established)",
+    "recommendations_made": 6,
+    "answers_given": 9,
+    "answer_helpfulness": 18,
+    "founder_validations": 8,
+    "avg_impact_score": 4.6,
+    "category_fit": 0.9,
+    "stage_context_fit": 0.8,
+    "recency": 0.9,
+    "confirmed": true,
+    "public_opt_in": true,
+    "network_reach": 31,
+    "follow_up_requests_received": 7
+  },
+  "_note": "Activity seed for /metrics. Stand-in for the data layer; replace per IMPLEMENTATION_PLAN.md."
+}

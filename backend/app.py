@@ -15,6 +15,7 @@ from agents.champion_matcher import match_champions
 from agents.mentor_matcher import match_mentors
 from agents.answer_retrieval import retrieve_answers
 from agents.outreach import draft_follow_up
+from agents.metrics import compute_metrics, record_fit
 
 app = FastAPI(title="Delta-Connector API")
 app.add_middleware(
@@ -66,6 +67,23 @@ def follow_up_draft(req: FollowUpRequest):
         asker_name=req.asker_name,
         consent_ok=req.consent_ok,
     )
+
+
+class FitRequest(BaseModel):
+    answer_id: str
+
+
+@app.post("/answer-fits")
+def answer_fits(req: FitRequest):
+    """User marked an answer as fitting (PRD §15.5): bump fit + helpfulness so
+    the answer ranks better and the provider's metrics grow."""
+    return record_fit(req.answer_id)
+
+
+@app.get("/metrics")
+def metrics(actor_id: str):
+    """Private personal metrics + trust score (PRD §15.10, §16). Private by default."""
+    return compute_metrics(actor_id)
 
 
 @app.post("/match")

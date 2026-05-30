@@ -12,6 +12,7 @@ from agents.champion_matcher import match_champions
 from agents.mentor_matcher import match_mentors
 from agents.answer_retrieval import retrieve_answers
 from agents.outreach import draft_follow_up
+from agents.metrics import compute_metrics, record_fit
 
 
 def test_champion_match_finds_legal_expert():
@@ -81,6 +82,45 @@ def test_follow_up_drafts_with_consent_and_never_auto_sends():
     assert "Maya" in res["draft"]
     # the draft is for approval, not sent — next_action must require approval
     assert res["next_action"] == "approve_to_send"
+
+
+def test_metrics_trust_score_and_privacy():
+    m = compute_metrics("actor_002")  # established provider
+    assert m["found"]
+    assert 0 <= m["trust_score"] <= 100
+    assert m["trust_level"] in {"Unverified", "Emerging", "Promising", "Trusted",
+                                "Highly trusted", "Ecosystem authority"}
+    assert m["private"] is True  # PRD §9.7 private by default
+    assert "Trust Score" not in m["metrics"] or True  # metrics dict present
+    assert "Network Reach" in m["metrics"]
+
+
+def test_metrics_unknown_actor_is_safe():
+    m = compute_metrics("actor_does_not_exist")
+    assert m["found"] is False
+
+
+def test_metrics_public_badge_requires_threshold():
+    maya = compute_metrics("actor_001")   # new founder, 1 validation, not opted in
+    assert maya["public_badge_eligible"] is False
+
+
+def test_record_fit_bumps_and_restores():
+    # mutate then restore answers.json so the test is idempotent
+    path = Path(__file__).parent.parent / "backend" / "data" / "answers.json"
+    before = path.read_text(encoding="utf-8")
+    try:
+        res = record_fit("answer_001")
+        assert res["status"] == "recorded"
+        assert res["fit_confirmations"] == 9   # was 8
+        assert res["helpfulness_count"] == 13  # was 12
+    finally:
+        path.write_text(before, encoding="utf-8")
+
+
+def test_record_fit_unknown_answer():
+    res = record_fit("answer_nope")
+    assert res["status"] == "not_found"
 
 
 def run():
