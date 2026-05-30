@@ -17,7 +17,14 @@ and use it for all fetch calls. All requests are JSON. Do not build auth or a da
 local React state and the endpoints described in later prompts.
 
 Top-level nav: Home, Ask, My Profile, Recommend, Graph, Dashboard.
+
+Brand assets (in the repo under pics/): use "delta-connector-logo.png" (full logo, wordmark + triangle)
+for the landing hero and any large title placement; use "delta-triangle-logo.png" (the triangle mark only)
+for the nav bar logo and the browser favicon/tab icon. Keep the triangle small and crisp in the nav.
 ```
+
+> Brand assets: full logo `pics/delta-connector-logo.png`, triangle mark `pics/delta-triangle-logo.png`.
+> In Lovable, upload both images to the project assets and reference them as above.
 
 > Backend base URL: `http://localhost:8000`. If the backend runs elsewhere, change `API_BASE`.
 
@@ -27,7 +34,8 @@ Top-level nav: Home, Ask, My Profile, Recommend, Graph, Dashboard.
 
 ```
 Build the landing page. Centered hero:
-- Logo area, headline "Delta Connector", subhead "The agentic trust network for Berlin's startup ecosystem."
+- The full logo (delta-connector-logo.png) centered at the top, then headline "Delta Connector",
+  subhead "The agentic trust network for Berlin's startup ecosystem."
 - One sentence: "No founder should need the right private WhatsApp group to know whom to ask, who to
   trust, or what to do next."
 - Primary CTA button "Join the network" → navigates to the Signup/Profile screen.

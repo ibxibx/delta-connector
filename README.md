@@ -96,7 +96,7 @@ python ../tests/test_agents.py   # run tests
 backend/        FastAPI app, agents (matchers, answer-retrieval, outreach, metrics), seed data
 docs/           API_CONTRACT.md, PLAN.md, IMPLEMENTATION_PLAN.md
 pdr/            product_requirements_document.md + design drafts
-pics/           logo and brand assets
+pics/           delta-connector-logo.png (full), delta-triangle-logo.png (compact mark)
 frontend/       fallback-components (CursorHighlight, TrustGraph, AnimatedAnswerCard)
 .claude/        agents/ (5 subagents), skills/ (engineering discipline)
 tests/          zero-dependency test harness
