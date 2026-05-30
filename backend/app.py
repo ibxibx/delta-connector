@@ -14,6 +14,7 @@ from pydantic import BaseModel
 from agents.champion_matcher import match_champions
 from agents.mentor_matcher import match_mentors
 from agents.answer_retrieval import retrieve_answers
+from agents.outreach import draft_follow_up
 
 app = FastAPI(title="Delta-Connector API")
 app.add_middleware(
@@ -45,6 +46,26 @@ def ask(req: AskRequest):
         "answers": answers,
         "post_publicly_available": True,
     }
+
+
+class FollowUpRequest(BaseModel):
+    answer_summary: str = ""
+    question: str = ""
+    asker_name: str = ""
+    consent_ok: bool = False
+
+
+@app.post("/follow-up-draft")
+def follow_up_draft(req: FollowUpRequest):
+    """Draft a follow-up message to the answer provider (PRD Outreach Agent).
+    Returns a draft only when consent_ok is True; never sends. The user approves
+    before anything is sent (PRD §17.4)."""
+    return draft_follow_up(
+        answer_summary=req.answer_summary,
+        question=req.question,
+        asker_name=req.asker_name,
+        consent_ok=req.consent_ok,
+    )
 
 
 @app.post("/match")

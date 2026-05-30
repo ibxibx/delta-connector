@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "backend"))
 from agents.champion_matcher import match_champions
 from agents.mentor_matcher import match_mentors
 from agents.answer_retrieval import retrieve_answers
+from agents.outreach import draft_follow_up
 
 
 def test_champion_match_finds_legal_expert():
@@ -63,6 +64,23 @@ def test_ask_scores_sorted_descending():
     res = retrieve_answers("funding and investor intros for pre-seed", {"stage": "pre-seed"})
     scores = [c["match_score"] for c in res]
     assert scores == sorted(scores, reverse=True)
+
+
+def test_follow_up_blocked_without_consent():
+    # PRD §17.4 safety: no draft and no identity revealed without consent
+    res = draft_follow_up("some answer", question="tax advisor", consent_ok=False)
+    assert res["status"] == "consent_required"
+    assert res["draft"] is None
+
+
+def test_follow_up_drafts_with_consent_and_never_auto_sends():
+    res = draft_follow_up("some answer", question="tax advisor for a GmbH",
+                          asker_name="Maya", consent_ok=True)
+    assert res["status"] == "drafted"
+    assert res["draft"], "expected a draft message"
+    assert "Maya" in res["draft"]
+    # the draft is for approval, not sent — next_action must require approval
+    assert res["next_action"] == "approve_to_send"
 
 
 def run():

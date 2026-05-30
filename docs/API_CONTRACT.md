@@ -48,6 +48,44 @@ helpfulness_count, trust_evidence). `match_score` renders as a confidence bar.
 
 ---
 
+## POST /follow-up-draft  (PRD Outreach Agent — consent-gated)
+
+After a user marks an answer as fitting and requests a follow-up, the agent drafts a message to the
+provider. **Consent-gated**: returns a draft only when `consent_ok` is true; otherwise returns a
+consent-request path and reveals nothing. The agent never sends — the user approves first (PRD §17.4).
+
+**Request**
+```json
+{
+  "answer_summary": "For a VC-backed GmbH, choose a tax advisor with DATEV...",
+  "question": "tax advisor for a VC-backed GmbH",
+  "asker_name": "Maya",
+  "consent_ok": true
+}
+```
+
+**Response (consent given)**
+```json
+{
+  "status": "drafted",
+  "draft": "Hi, I'm Maya.\n\nYour answer on ... was exactly what I needed ...",
+  "message": "Draft ready. Review and edit before sending — nothing is sent until you approve.",
+  "next_action": "approve_to_send"
+}
+```
+
+**Response (no consent)**
+```json
+{
+  "status": "consent_required",
+  "draft": null,
+  "message": "The answer provider hasn't opted into a follow-up yet. We can send a consent request without revealing your details.",
+  "next_action": "request_consent"
+}
+```
+
+---
+
 ## POST /match  (legacy matcher — champions/mentors)
 
 The core endpoint. A newcomer describes a need; the orchestrator routes it to the champion-matcher and/or mentor-matcher agents and returns ranked results.
