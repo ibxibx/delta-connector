@@ -29,5 +29,13 @@ Architecture rules:
 Privacy in the UI (PRD §20): never display unconfirmed invitees as graph nodes; show anonymized trust
 evidence ("Recommended by 4 verified founders in your stage") before any identity is revealed.
 
+Interaction/animation strategy (see `docs/IMPLEMENTATION_PLAN.md` §6): decide per effect by regression
+risk. Let Lovable handle responsive layout, hover flashes, color/scale transitions, and entrance
+animations. For the cursor-following highlight and the moving/interactive trust graph — Lovable's weak
+spots — use the ready-made fallbacks in `frontend/fallback-components/` (`CursorHighlight.jsx`,
+`TrustGraph.jsx` (needs `npm i reactflow`), `AnimatedAnswerCard.jsx`) rather than burning prompts.
+Keep every custom interaction in a self-contained component with a clean prop interface so any one can
+be swapped without touching the rest. Time-box: one focused Lovable attempt per effect, then fall back.
+
 Follow the engineering-discipline skill: simplest implementation, surgical changes, match existing style.
 Don't invent new API fields — if you need one, request it from the backend-coder and add it to the contract.

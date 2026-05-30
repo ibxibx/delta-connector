@@ -104,3 +104,31 @@ booking, visible nodes for unconfirmed invitees. If a task drifts here, the task
 - For the "agents working live" feel: call `/ask`, show a brief per-agent progress state, render cards as they resolve.
 - Watch the known Lovable risks: complex custom animations and prompt-induced regressions. Keep the
   custom surface small; if Lovable fights a bespoke graph view, drop in a React Flow component manually.
+
+## 6. Frontend interaction strategy (responsive + animation)
+
+Target effects: responsive design, moving graphics, cursor screen-highlight responsiveness,
+flashing/glowing areas on hover, entrance animations.
+
+**Don't treat this as Lovable-vs-build-our-own.** Decide per effect, by regression risk:
+
+| Effect | Build with | Why |
+| --- | --- | --- |
+| Responsive layout | Lovable | Its core strength |
+| Hover flash/glow, color/scale transitions | Lovable | Tailwind + CSS, low risk |
+| Page/card entrance animations | Lovable | Framer Motion, low risk |
+| Cursor-following screen highlight | **Fallback component** | ~30 lines; not worth prompt churn |
+| Moving/interactive trust graph | **Fallback component** | Custom + live-data + continuous interaction = Lovable's weak spot, and it's the visual centerpiece |
+
+**Make it safe with component isolation.** Keep every fancy interaction in a self-contained component
+with a clean prop interface (`<TrustGraph data={…} />`, `<CursorHighlight>`, `<AnimatedAnswerCard>`).
+Then Lovable can try first, and any disappointing component gets swapped for a hand-built one without
+touching the rest of the app — component-by-component fallback, no all-or-nothing fork.
+
+**Ready-to-drop fallbacks already in the repo:** `frontend/fallback-components/` contains
+`CursorHighlight.jsx`, `TrustGraph.jsx` (React Flow), and `AnimatedAnswerCard.jsx`, with a README on
+how to drop them into the Lovable project. The graph and cursor highlight are best built from these
+directly rather than via Lovable prompts.
+
+**Time-box the decision:** one focused Lovable attempt (~15 min) per custom effect; if one re-prompt
+doesn't fix it, switch that component to the fallback and move on. The trap is the third+ re-prompt.
