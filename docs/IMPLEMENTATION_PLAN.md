@@ -10,6 +10,10 @@ thing that satisfies the acceptance criteria, defer everything in PRD §12 Non-G
 
 ## 0. The one decision that shapes everything: where does data + auth live?
 
+> **Current ruling: see [ADR 0001](decisions/0001-seed-files-now-supabase-next.md).** The demo runs on
+> seed files (the backend already does); Supabase is the Phase-1 target adopted right after the
+> hackathon. The Path A/B discussion below is the original framing and remains the post-demo plan.
+
 Lovable generates a React app and integrates most cleanly with **Supabase** (its native backend)
 or with a **clean REST API over HTTP**. Two viable paths:
 
