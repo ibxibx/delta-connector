@@ -13,6 +13,7 @@ from pydantic import BaseModel
 
 from agents.champion_matcher import match_champions
 from agents.mentor_matcher import match_mentors
+from agents.answer_retrieval import retrieve_answers
 
 app = FastAPI(title="Delta-Connector API")
 app.add_middleware(
@@ -26,6 +27,24 @@ class MatchRequest(BaseModel):
     query: str = ""
     profile: dict | None = None
     want: list[str] = ["champions", "mentors"]
+
+
+class AskRequest(BaseModel):
+    query: str = ""
+    profile: dict | None = None
+
+
+@app.post("/ask")
+def ask(req: AskRequest):
+    """Ask & Discover (PRD Core Flow 2): return previous trusted answers as
+    MatchResult cards with anonymized trust evidence. If none fit, the client
+    offers 'post publicly'."""
+    answers = retrieve_answers(req.query, req.profile)
+    return {
+        "query": req.query,
+        "answers": answers,
+        "post_publicly_available": True,
+    }
 
 
 @app.post("/match")

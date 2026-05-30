@@ -6,7 +6,49 @@ Base URL (local dev): `http://localhost:8000`
 
 ---
 
-## POST /match
+## POST /ask  (PRD Core Flow 2 — Ask & Discover)
+
+The demo-critical endpoint. A founder asks a question; the answer-retrieval agent returns ranked
+previous answers as MatchResult cards with anonymized trust evidence. If none fit, the client offers
+"post publicly". Provider identity is never included (revealed later only under consent rules).
+
+**Request**
+```json
+{
+  "query": "Which tax advisor is good for a VC-backed GmbH in Berlin?",
+  "profile": { "stage": "pre-seed", "industry": "AI SaaS" }
+}
+```
+
+**Response**
+```json
+{
+  "query": "Which tax advisor is good for a VC-backed GmbH in Berlin?",
+  "answers": [
+    {
+      "id": "match_answer_001",
+      "matched_type": "answer",
+      "matched_id": "answer_001",
+      "match_score": 0.99,
+      "answer_summary": "For a VC-backed GmbH, choose a tax advisor with DATEV...",
+      "category": "Tax/Admin",
+      "stage_fit": "pre-seed",
+      "helpfulness_count": 12,
+      "trust_evidence": "Helpful for 12 founders. Verified in Tax/Admin by 8 founders.",
+      "reasons": ["Strong Tax/Admin category match", "Similar question answered before"],
+      "next_action": "Mark as fitting or request follow-up"
+    }
+  ],
+  "post_publicly_available": true
+}
+```
+
+Frontend maps each `answers[]` item directly onto `AnimatedAnswerCard` (summary, category, stage_fit,
+helpfulness_count, trust_evidence). `match_score` renders as a confidence bar.
+
+---
+
+## POST /match  (legacy matcher — champions/mentors)
 
 The core endpoint. A newcomer describes a need; the orchestrator routes it to the champion-matcher and/or mentor-matcher agents and returns ranked results.
 

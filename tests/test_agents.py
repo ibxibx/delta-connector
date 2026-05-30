@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "backend"))
 
 from agents.champion_matcher import match_champions
 from agents.mentor_matcher import match_mentors
+from agents.answer_retrieval import retrieve_answers
 
 
 def test_champion_match_finds_legal_expert():
@@ -34,6 +35,34 @@ def test_mentor_match_prioritises_industry_and_tenure():
 
 def test_mentor_match_limit_respected():
     assert len(match_mentors("", {"industry": "saas"}, limit=2)) <= 2
+
+
+def test_ask_returns_tax_answer_for_demo_query():
+    # PRD §24 demo query
+    res = retrieve_answers(
+        "Which tax advisor is good for a VC-backed GmbH in Berlin?",
+        {"stage": "pre-seed"},
+    )
+    assert res, "expected at least one answer card"
+    assert res[0]["matched_id"] == "answer_001", f"got {res[0]['matched_id']}"
+    assert "Tax/Admin" in res[0]["category"]
+    assert res[0]["trust_evidence"], "card must carry trust evidence"
+
+
+def test_ask_cards_carry_reasons_and_no_provider_identity():
+    res = retrieve_answers("I need a lawyer for GmbH incorporation", {"stage": "pre-incorporation"})
+    assert res, "expected results"
+    card = res[0]
+    assert card["reasons"], "each card needs match reasons"
+    # anonymized trust first: no provider id/name leaks into the card
+    assert "answer_provider_id" not in card
+    assert "name" not in card
+
+
+def test_ask_scores_sorted_descending():
+    res = retrieve_answers("funding and investor intros for pre-seed", {"stage": "pre-seed"})
+    scores = [c["match_score"] for c in res]
+    assert scores == sorted(scores, reverse=True)
 
 
 def run():
