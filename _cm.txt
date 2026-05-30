@@ -1,0 +1,18 @@
+Add champion/mentor profiles + "answer fits" reveal with Connect
+
+Ask flow: when a user clicks "This answer fits", the answer text now
+shrinks to the left and the matched champion/mentor's full profile
+appears on the right — avatar, name, role, title, Berlin location,
+bio, strengths, and trust/helped/reach stats — with a Connect button
+(prefilled mailto) and a Send-a-message action. Adds suggested real
+ecosystem questions on the Ask screen.
+
+Data: new frontend/src/lib/champions.ts (auto-generated) holds 38
+champion/mentor profiles and 50 ecosystem questions with full answer
+text, joined from the Supabase exports. Generator + source CSVs live
+in data-authoring/ (build_data.py, gen_champions.py).
+
+Nicolai's feature_network_globe integration (My Network page, trust
+graph, filter bar, ambient graph) is preserved unchanged. Also keeps
+the prior UI polish (Apple fonts, glass sidebar, agent pipeline,
+global hover interactivity, panorama background).

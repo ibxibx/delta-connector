@@ -14,6 +14,7 @@ import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppRecommendRouteImport } from './routes/_app/recommend'
 import { Route as AppProfileRouteImport } from './routes/_app/profile'
+import { Route as AppNetworkRouteImport } from './routes/_app/network'
 import { Route as AppHomeRouteImport } from './routes/_app/home'
 import { Route as AppGraphRouteImport } from './routes/_app/graph'
 import { Route as AppDashboardRouteImport } from './routes/_app/dashboard'
@@ -41,6 +42,11 @@ const AppRecommendRoute = AppRecommendRouteImport.update({
 const AppProfileRoute = AppProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNetworkRoute = AppNetworkRouteImport.update({
+  id: '/network',
+  path: '/network',
   getParentRoute: () => AppRoute,
 } as any)
 const AppHomeRoute = AppHomeRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof AppDashboardRoute
   '/graph': typeof AppGraphRoute
   '/home': typeof AppHomeRoute
+  '/network': typeof AppNetworkRoute
   '/profile': typeof AppProfileRoute
   '/recommend': typeof AppRecommendRoute
 }
@@ -81,6 +88,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof AppDashboardRoute
   '/graph': typeof AppGraphRoute
   '/home': typeof AppHomeRoute
+  '/network': typeof AppNetworkRoute
   '/profile': typeof AppProfileRoute
   '/recommend': typeof AppRecommendRoute
 }
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   '/_app/dashboard': typeof AppDashboardRoute
   '/_app/graph': typeof AppGraphRoute
   '/_app/home': typeof AppHomeRoute
+  '/_app/network': typeof AppNetworkRoute
   '/_app/profile': typeof AppProfileRoute
   '/_app/recommend': typeof AppRecommendRoute
 }
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/graph'
     | '/home'
+    | '/network'
     | '/profile'
     | '/recommend'
   fileRoutesByTo: FileRoutesByTo
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/graph'
     | '/home'
+    | '/network'
     | '/profile'
     | '/recommend'
   id:
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '/_app/dashboard'
     | '/_app/graph'
     | '/_app/home'
+    | '/_app/network'
     | '/_app/profile'
     | '/_app/recommend'
   fileRoutesById: FileRoutesById
@@ -173,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppProfileRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/network': {
+      id: '/_app/network'
+      path: '/network'
+      fullPath: '/network'
+      preLoaderRoute: typeof AppNetworkRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/_app/home': {
       id: '/_app/home'
       path: '/home'
@@ -209,6 +228,7 @@ interface AppRouteChildren {
   AppDashboardRoute: typeof AppDashboardRoute
   AppGraphRoute: typeof AppGraphRoute
   AppHomeRoute: typeof AppHomeRoute
+  AppNetworkRoute: typeof AppNetworkRoute
   AppProfileRoute: typeof AppProfileRoute
   AppRecommendRoute: typeof AppRecommendRoute
 }
@@ -218,6 +238,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppDashboardRoute: AppDashboardRoute,
   AppGraphRoute: AppGraphRoute,
   AppHomeRoute: AppHomeRoute,
+  AppNetworkRoute: AppNetworkRoute,
   AppProfileRoute: AppProfileRoute,
   AppRecommendRoute: AppRecommendRoute,
 }

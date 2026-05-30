@@ -44,7 +44,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -108,11 +108,17 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
   }
-  h1, h2, h3, h4 { letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { letter-spacing: -0.022em; }
 }
 
 @layer utilities {
+  /* Display font for marketing headings — uses the same Apple system stack
+     for a consistent look across the app. */
+  .font-display { font-family: var(--font-sans); letter-spacing: -0.025em; }
+
   .gradient-agentic {
     background-image: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
   }
@@ -124,6 +130,19 @@
   }
   .bg-surface { background-color: var(--color-surface); }
   .bg-elevated { background-color: var(--color-elevated); }
+
+  /* Sidebar fades from a white-tinted navy at the top to the standard
+     semi-transparent navy by ~one-third of its height, then holds. */
+  .sidebar-glass {
+    background-image: linear-gradient(
+      to bottom,
+      color-mix(in srgb, white 50%, color-mix(in srgb, var(--navy) 50%, transparent)) 0%,
+      color-mix(in srgb, var(--navy) 50%, transparent) 33%,
+      color-mix(in srgb, var(--navy) 50%, transparent) 100%
+    );
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
 
   .hover-glow {
     transition: transform 200ms ease, box-shadow 200ms ease;
@@ -140,4 +159,62 @@
   .animate-fade-in {
     animation: dc-fade-in-up 420ms ease-out both;
   }
+
+  /* ---- Interactivity / hover polish ---- */
+
+  /* Cards & tiles lift and glow on hover */
+  .interactive {
+    transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 200ms ease,
+                border-color 200ms ease;
+    will-change: transform;
+  }
+  .interactive:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px -16px color-mix(in oklab, var(--color-primary) 45%, transparent);
+    border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  }
+  .interactive:active { transform: translateY(-1px); }
+
+  /* Inputs glow when focused / in use */
+  .field-glow:focus-within {
+    border-color: color-mix(in srgb, var(--color-primary) 60%, transparent);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-primary) 18%, transparent);
+  }
+
+  /* ---- Agent processing animation ---- */
+  @keyframes dc-scan {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
+  }
+  .agent-scan::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-primary) 30%, transparent),
+      transparent
+    );
+    animation: dc-scan 1.4s ease-in-out infinite;
+  }
+
+  @keyframes dc-pulse-ring {
+    0%   { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-primary) 55%, transparent); }
+    70%  { box-shadow: 0 0 0 10px color-mix(in oklab, var(--color-primary) 0%, transparent); }
+    100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-primary) 0%, transparent); }
+  }
+  .pulse-ring { animation: dc-pulse-ring 1.4s ease-out infinite; }
+
+  @keyframes dc-flow {
+    to { stroke-dashoffset: -16; }
+  }
+  .flow-line { stroke-dasharray: 4 4; animation: dc-flow 0.6s linear infinite; }
+
+  @keyframes dc-bar {
+    0%, 100% { transform: scaleY(0.4); }
+    50%      { transform: scaleY(1); }
+  }
+  .agent-bar { transform-origin: bottom; animation: dc-bar 0.9s ease-in-out infinite; }
 }

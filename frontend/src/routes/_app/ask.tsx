@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Search, Check, MessageCircle, Bookmark, X, Sparkles, Send, ShieldCheck, ThumbsUp, MessageSquare } from "lucide-react";
+import { Search, Check, MessageCircle, Bookmark, X, Sparkles, Send, ShieldCheck, ThumbsUp, MessageSquare, Database, Filter, BarChart3, MapPin, Mail, BadgeCheck, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { ask as askApi, answerFits, followUpDraft, type UiAnswer } from "@/lib/api/delta";
+import { championForCategory, type Champion, ECO_QUESTIONS } from "@/lib/champions";
 import { currentUser } from "@/lib/mock-data";
 import { toast } from "sonner";
 
@@ -19,7 +20,21 @@ export const Route = createFileRoute("/_app/ask")({
   component: Ask,
 });
 
-const stages = ["Searching previous answers…", "Checking category fit…", "Looking for founder-validated responses…", "Ranking by trust and helpfulness…"];
+const agentSteps = [
+  { icon: Database, label: "Retrieval", sub: "Searching previous answers" },
+  { icon: Filter, label: "Category fit", sub: "Matching to your context" },
+  { icon: ShieldCheck, label: "Trust check", sub: "Founder-validated responses" },
+  { icon: BarChart3, label: "Ranking", sub: "Scoring by trust & helpfulness" },
+];
+const stages = agentSteps.map((s) => s.sub);
+
+// A few real ecosystem questions to seed the demo (spread across domains).
+const SUGGESTED = [
+  "Which tax advisor in Berlin is good for VC-backed startups and handles DATEV?",
+  "What is the fastest way to form a GmbH in Berlin as a non-German founder?",
+  "Which Berlin VCs are actively investing in climatetech pre-seed rounds right now?",
+  "We are looking for a technical co-founder with a background in energy systems in Berlin. Where should we be searching?",
+].filter((s) => ECO_QUESTIONS.some((q) => q.question === s));
 
 function Ask() {
   const { q: incomingQ } = Route.useSearch();
@@ -37,7 +52,7 @@ function Ask() {
     if (phase !== "processing") return;
     setStageIdx(0);
     const ivs: ReturnType<typeof setTimeout>[] = [];
-    stages.forEach((_, i) => ivs.push(setTimeout(() => setStageIdx(i), i * 450)));
+    stages.forEach((_, i) => ivs.push(setTimeout(() => setStageIdx(i), i * 600)));
     return () => ivs.forEach(clearTimeout);
   }, [phase]);
 
@@ -47,8 +62,8 @@ function Ask() {
     setPhase("processing");
     try {
       const { answers: got } = await askApi(query, { stage: "pre-seed", industry: "saas" });
-      // keep the loading visible briefly so it reads as "agents working"
-      await new Promise((r) => setTimeout(r, 900));
+      // keep the loading visible long enough for the agent pipeline to read
+      await new Promise((r) => setTimeout(r, 1600));
       setResults(got);
       setCounts(Object.fromEntries(got.map((a) => [a.id, a.helpfulFor])));
       setPhase("results");
@@ -90,21 +105,26 @@ function Ask() {
 
       <Card className="p-4">
         <div className="flex gap-2">
-          <div className="relative flex-1">
+          <div className="relative flex-1 rounded-md border border-input field-glow transition">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
-            <Input value={q} onChange={(e) => setQ(e.target.value)} className="pl-9 h-11" placeholder="Ask something like: Which tax advisor is good for a VC-backed GmbH in Berlin?" />
+            <Input value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") submit(); }} className="border-0 pl-9 h-11 focus-visible:ring-0 focus-visible:ring-offset-0" placeholder="Ask something like: Which tax advisor is good for a VC-backed GmbH in Berlin?" />
           </div>
-          <Button className="h-11 bg-primary hover:bg-primary-hover" onClick={() => submit()}>
+          <Button className="h-11 bg-primary hover:bg-primary-hover transition active:scale-95" onClick={() => submit()}>
             <Sparkles className="size-4" /> Find trusted answers
           </Button>
         </div>
-        {phase === "processing" && (
-          <div className="mt-4 rounded-md border bg-elevated p-3">
-            {stages.map((s, i) => (
-              <div key={s} className={`flex items-center gap-2 text-xs py-1 transition ${i <= stageIdx ? "text-foreground" : "text-muted-foreground/40"}`}>
-                {i < stageIdx ? <Check className="size-3.5 text-success" /> : i === stageIdx ? <Sparkles className="size-3.5 text-primary animate-pulse" /> : <span className="size-3.5 rounded-full border" />}
-                {s}
-              </div>
+        {phase === "processing" && <AgentPipeline stageIdx={stageIdx} />}
+        {phase === "idle" && SUGGESTED.length > 0 && (
+          <div className="mt-3 flex flex-wrap items-center gap-1.5">
+            <span className="text-xs text-muted-foreground mr-1">Try:</span>
+            {SUGGESTED.map((sug) => (
+              <button
+                key={sug}
+                onClick={() => { setQ(sug); submit(sug); }}
+                className="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground transition hover:border-primary/40 hover:text-foreground hover:bg-primary/5"
+              >
+                {sug.length > 54 ? sug.slice(0, 52) + "…" : sug}
+              </button>
             ))}
           </div>
         )}
@@ -117,7 +137,7 @@ function Ask() {
             {results.map((a) => {
               const isFitted = fitted[a.id];
               return (
-                <Card key={a.id} className="p-5">
+                <Card key={a.id} className="interactive p-5 animate-fade-in">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <h3 className="font-semibold">{a.question}</h3>
@@ -130,25 +150,35 @@ function Ask() {
                     </div>
                     <Badge className="bg-success/10 text-success border-success/20 shrink-0">{a.matchPct}% match</Badge>
                   </div>
-                  <p className="mt-3 text-sm text-foreground/90 leading-relaxed">{a.answer}</p>
+                  {/* When the answer fits, the long answer text shrinks to the
+                      left and the champion's full profile appears on the right. */}
+                  <div className={isFitted ? "mt-3 grid gap-5 md:grid-cols-[1fr_300px]" : "mt-3"}>
+                    <div className="min-w-0 transition-all duration-300">
+                      <p className="text-sm text-foreground/90 leading-relaxed">{a.answer}</p>
 
-                  <div className="mt-4 rounded-md bg-elevated p-3 grid sm:grid-cols-3 gap-3 text-xs">
-                    <Evidence icon={<ThumbsUp className="size-3.5" />} label={`Helpful for ${counts[a.id] ?? a.helpfulFor} founders`} />
-                    <Evidence icon={<ShieldCheck className="size-3.5" />} label={a.trustEvidence} />
-                    <Evidence icon={<Check className="size-3.5" />} label={a.reasons[0] ?? `Verified ${a.categories[0]}`} />
+                      <div className="mt-4 rounded-md bg-elevated p-3 grid sm:grid-cols-3 gap-3 text-xs">
+                        <Evidence icon={<ThumbsUp className="size-3.5" />} label={`Helpful for ${counts[a.id] ?? a.helpfulFor} founders`} />
+                        <Evidence icon={<ShieldCheck className="size-3.5" />} label={a.trustEvidence} />
+                        <Evidence icon={<Check className="size-3.5" />} label={a.reasons[0] ?? `Verified ${a.categories[0]}`} />
+                      </div>
+                    </div>
+
+                    {isFitted && <ChampionPanel champion={championForCategory(a.categories[0] ?? a.question)} question={q} />}
                   </div>
 
                   <div className="mt-4 flex items-center justify-between border-t pt-4">
                     <div className="flex items-center gap-2.5 min-w-0">
-                      <div className="size-8 rounded-full bg-gradient-to-br from-primary to-accent-purple grid place-items-center text-white text-[10px] font-semibold">
-                        ?
-                      </div>
+                      {!isFitted && (
+                        <div className="size-8 rounded-full bg-gradient-to-br from-primary to-accent-purple grid place-items-center text-white text-[10px] font-semibold">
+                          ?
+                        </div>
+                      )}
                       <div className="min-w-0">
                         <div className="text-sm font-medium truncate">
-                          {isFitted ? "Provider available for follow-up" : "Provider hidden until you confirm fit"}
+                          {isFitted ? "Verified provider revealed →" : "Provider hidden until you confirm fit"}
                         </div>
                         <div className="text-xs text-muted-foreground truncate">
-                          {a.providerAnonymized}
+                          {isFitted ? "Connect directly from their profile" : a.providerAnonymized}
                         </div>
                       </div>
                     </div>
@@ -176,7 +206,7 @@ function Ask() {
             })}
           </div>
 
-          <Card className="p-5 border-dashed">
+          <Card className="interactive p-5 border-dashed">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <div className="font-medium">None of these fit?</div>
@@ -201,6 +231,145 @@ function Ask() {
 
 function Evidence({ icon, label }: { icon: React.ReactNode; label: string }) {
   return <div className="flex items-center gap-1.5 text-muted-foreground">{icon} <span>{label}</span></div>;
+}
+
+function ChampionPanel({ champion, question }: { champion: Champion | undefined; question: string }) {
+  if (!champion) return null;
+  const c = champion;
+  const subject = encodeURIComponent(`Delta Connector — follow-up on: ${question.slice(0, 60)}`);
+  const body = encodeURIComponent(
+    `Hi ${c.name.split(" ")[0]},\n\nI found your answer on Delta Connector really helpful and would love to follow up.\n\nMy question was: "${question}"\n\nThanks!\n${currentUser.name}`,
+  );
+  const mailto = `mailto:${c.email}?subject=${subject}&body=${body}`;
+
+  return (
+    <aside className="animate-fade-in rounded-2xl border bg-surface/70 p-4 md:border-l md:bg-transparent md:pl-5">
+      <div className="flex flex-col items-center text-center">
+        <div className="relative">
+          <img
+            src={c.avatar}
+            alt={c.name}
+            className="size-20 rounded-full object-cover ring-2 ring-primary/20"
+            loading="lazy"
+          />
+          {c.verified && (
+            <span className="absolute -bottom-0.5 -right-0.5 grid size-6 place-items-center rounded-full bg-primary text-white ring-2 ring-surface">
+              <BadgeCheck className="size-3.5" />
+            </span>
+          )}
+        </div>
+        <div className="mt-3 font-semibold leading-tight">{c.name}</div>
+        <div className="mt-0.5 text-xs text-primary font-medium capitalize">{c.role} · {c.title}</div>
+        <div className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
+          <MapPin className="size-3" /> {c.location}
+        </div>
+      </div>
+
+      <p className="mt-3 text-xs text-muted-foreground leading-relaxed line-clamp-4">{c.bio}</p>
+
+      <div className="mt-3 flex flex-wrap gap-1">
+        {c.strengths.slice(0, 4).map((s) => (
+          <Badge key={s} variant="secondary" className="text-[10px]">{s}</Badge>
+        ))}
+      </div>
+
+      <div className="mt-3 grid grid-cols-3 gap-2 text-center">
+        <Stat label="Trust" value={Math.round(c.trustScore)} />
+        <Stat label="Helped" value={c.foundersHelped} icon={<Users className="size-3" />} />
+        <Stat label="Reach" value={c.networkReach >= 1000 ? `${(c.networkReach / 1000).toFixed(1)}k` : c.networkReach} />
+      </div>
+
+      <div className="mt-4 space-y-2">
+        <Button asChild size="sm" className="w-full bg-primary hover:bg-primary-hover">
+          <a href={mailto}><Mail className="size-3.5" /> Connect</a>
+        </Button>
+        <Button
+          size="sm"
+          variant="outline"
+          className="w-full"
+          onClick={() => toast.success(`Message request sent to ${c.name}`, { description: "They'll be notified and can accept to start a conversation." })}
+        >
+          <MessageCircle className="size-3.5" /> Send a message
+        </Button>
+      </div>
+    </aside>
+  );
+}
+
+function Stat({ label, value, icon }: { label: string; value: string | number; icon?: React.ReactNode }) {
+  return (
+    <div className="rounded-lg border bg-background/60 py-2">
+      <div className="flex items-center justify-center gap-1 text-sm font-semibold tabular-nums">{icon}{value}</div>
+      <div className="text-[10px] uppercase tracking-wide text-muted-foreground">{label}</div>
+    </div>
+  );
+}
+
+function AgentPipeline({ stageIdx }: { stageIdx: number }) {
+  return (
+    <div className="mt-4 rounded-xl border bg-elevated/70 p-4 animate-fade-in">
+      <div className="flex items-center gap-2 text-xs font-medium text-primary">
+        <Sparkles className="size-3.5 animate-pulse" />
+        Agents working on your question…
+      </div>
+
+      {/* Scanning bar */}
+      <div className="agent-scan relative mt-3 h-1 overflow-hidden rounded-full bg-primary/10" />
+
+      {/* Agent nodes connected by animated flow lines */}
+      <div className="mt-4 flex items-stretch justify-between gap-1">
+        {agentSteps.map((step, i) => {
+          const done = i < stageIdx;
+          const active = i === stageIdx;
+          const Icon = step.icon;
+          return (
+            <div key={step.label} className="flex flex-1 items-center">
+              <div className="flex flex-1 flex-col items-center text-center">
+                <div
+                  className={`grid size-11 place-items-center rounded-2xl border transition-all duration-300 ${
+                    done
+                      ? "border-success/30 bg-success/10 text-success"
+                      : active
+                      ? "border-primary/40 bg-primary/10 text-primary pulse-ring scale-110"
+                      : "border-border bg-surface text-muted-foreground/40"
+                  }`}
+                >
+                  {done ? <Check className="size-5" /> : <Icon className="size-5" />}
+                </div>
+                <div className={`mt-2 text-[11px] font-medium transition-colors ${done || active ? "text-foreground" : "text-muted-foreground/40"}`}>
+                  {step.label}
+                </div>
+                <div className={`text-[10px] leading-tight transition-colors ${active ? "text-muted-foreground" : "text-transparent"} h-3`}>
+                  {active ? step.sub : ""}
+                </div>
+              </div>
+              {i < agentSteps.length - 1 && (
+                <svg width="28" height="8" viewBox="0 0 28 8" className="shrink-0 -mt-6">
+                  <line
+                    x1="0" y1="4" x2="28" y2="4"
+                    className={i < stageIdx ? "flow-line" : ""}
+                    stroke={i < stageIdx ? "var(--color-primary)" : "var(--color-border)"}
+                    strokeWidth="2"
+                  />
+                </svg>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Live equalizer to convey active computation */}
+      <div className="mt-4 flex items-end justify-center gap-1 h-6">
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((n) => (
+          <span
+            key={n}
+            className="agent-bar w-1 rounded-full bg-primary/50"
+            style={{ height: "100%", animationDelay: `${n * 0.09}s` }}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function FollowupModal({ answer, onClose }: { answer: UiAnswer | null; onClose: () => void }) {
