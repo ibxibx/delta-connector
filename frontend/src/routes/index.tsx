@@ -4,6 +4,8 @@ import { Sparkles, ArrowRight, Check, MessageCircle, Send, Search } from "lucide
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { LiveNetworkGraph } from "@/components/live-network-graph";
+import { NetworkGlobeSection } from "@/components/network-globe-section";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,6 +24,7 @@ function Landing() {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
+      <NetworkGlobeSection />
     </div>
   );
 }
@@ -84,6 +87,9 @@ function Hero() {
             "linear-gradient(to bottom, color-mix(in srgb, var(--color-background) 50%, transparent) 0%, color-mix(in srgb, var(--color-background) 80%, transparent) 55%, var(--color-background) 100%)",
         }}
       />
+      <div aria-hidden className="absolute inset-0 z-[1]">
+        <LiveNetworkGraph className="opacity-50" />
+      </div>
       <div className="absolute inset-0 z-[1] opacity-[0.06]" style={{
         backgroundImage: "radial-gradient(circle at 1px 1px, var(--color-foreground) 1px, transparent 0)",
         backgroundSize: "24px 24px",

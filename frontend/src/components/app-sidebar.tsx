@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Home, Search, User, UserPlus, Network, LayoutDashboard } from "lucide-react";
+import { Home, Search, User, UserPlus, Network, LayoutDashboard, Globe2 } from "lucide-react";
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarMenu,
   SidebarMenuButton, SidebarMenuItem, SidebarHeader, SidebarFooter,
@@ -12,6 +12,7 @@ const items = [
   { title: "My Profile", url: "/profile", icon: User },
   { title: "Recommend", url: "/recommend", icon: UserPlus },
   { title: "Graph", url: "/graph", icon: Network },
+  { title: "My Network", url: "/network", icon: Globe2 },
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
 ];
 
