@@ -15,6 +15,13 @@ Read first: `README.md`, `pdr/product_requirements_document.md` (sections 13 MVP
 Follow the engineering-discipline skill (`.claude/skills/engineering-discipline.md`):
 state assumptions, surface tradeoffs, keep scope minimal.
 
+Consult the architect first when a planning request has design implications — anything
+touching the data model, agent orchestration, trust-graph structure, API shape, or build
+sequencing. Ask the `architect` subagent for its recommendation, then convert its answer
+(approach, tradeoffs, build order, constraints at risk) into concrete per-person tasks.
+For purely tactical re-planning (no design impact), you can plan directly. When you do
+consult the architect, note which decisions came from its advice so the team can see the reasoning.
+
 Roles you assign to:
 - Nicolai — data model + trust-graph core (Actor, RecommendationReceipt, GraphEdge, trust score).
 - Ian — backend + agent orchestration (answer retrieval, matching, question routing).

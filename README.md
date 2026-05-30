@@ -61,7 +61,7 @@ See [`docs/API_CONTRACT.md`](docs/API_CONTRACT.md) for endpoint shapes — the s
 
 ## Team & specialized agents
 
-Three of us build in parallel, with four Claude Code subagents in [`.claude/agents/`](.claude/agents) to assist:
+Three of us build in parallel, with five Claude Code subagents in [`.claude/agents/`](.claude/agents) to assist:
 
 | Person | Owns | Assisting agent |
 | --- | --- | --- |
@@ -69,7 +69,8 @@ Three of us build in parallel, with four Claude Code subagents in [`.claude/agen
 | Ian | Backend + agent orchestration | `backend-coder` |
 | Lauritz | Frontend (Lovable/React) + demo + seed data | `frontend-coder` |
 
-- **`task-planner`** — turns the PRD + repo state into the next tasks per person, with verifiable checks.
+- **`task-planner`** — turns the PRD + repo state into the next tasks per person, with verifiable checks. Consults the `architect` when a request has design implications.
+- **`architect`** — advises on system design and tradeoffs (data model, orchestration, API shape, build sequencing); advisory and read-only. The task-planner and coders consult it before architectural decisions.
 - **`test-engineer`** — writes/runs tests against PRD acceptance criteria; treats privacy and agent-forbidden-action rules as must-pass.
 - **`backend-coder`** — API, data model, orchestration, trust score; stays within the API contract.
 - **`frontend-coder`** — the eight build-plan screens; thin client over the API.
