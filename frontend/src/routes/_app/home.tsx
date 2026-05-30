@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ArrowRight, TrendingUp, Sparkles, CheckCircle2 } from "lucide-react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, TrendingUp, Sparkles, CheckCircle2, Mic, MicOff, Search } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { currentUser, recentActivity, recommendedNextSteps } from "@/lib/mock-data";
 import { getMetrics, type BackendMetrics } from "@/lib/api/delta";
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/_app/home")({
 });
 
 function Home() {
+  const nav = useNavigate();
   // Pull the live trust metrics for the demo persona (actor_001) so Home and the
   // Dashboard show the same numbers. Falls back to mock values if backend is offline.
   const [metrics, setMetrics] = useState<BackendMetrics | null>(null);
@@ -44,11 +46,14 @@ function Home() {
         </div>
         <div className="mt-5 rounded-md border bg-surface p-4 flex items-start gap-3">
           <div className="size-9 rounded-md gradient-agentic grid place-items-center text-white shrink-0"><Sparkles className="size-4" /></div>
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <div className="text-sm font-medium">Recommended next action</div>
             <p className="mt-0.5 text-sm text-muted-foreground">
-              You saved an answer about startup tax advisors. Next: request a follow-up or prepare a provider outreach message.
+              You saved an answer about startup tax advisors. Ask your next question below — type it or use the mic.
             </p>
+            <div className="mt-3">
+              <AskBox onAsk={(text) => nav({ to: "/ask", search: { q: text } })} />
+            </div>
           </div>
         </div>
       </Card>
@@ -107,6 +112,74 @@ function Home() {
           </ul>
         </Card>
       </div>
+    </div>
+  );
+}
+
+function AskBox({ onAsk }: { onAsk: (text: string) => void }) {
+  const [text, setText] = useState("");
+  const [listening, setListening] = useState(false);
+  const [supported, setSupported] = useState(true);
+  const recognitionRef = useRef<any>(null);
+
+  useEffect(() => {
+    const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SR) { setSupported(false); return; }
+    const rec = new SR();
+    rec.lang = "en-US";
+    rec.interimResults = true;
+    rec.continuous = false;
+    rec.onresult = (e: any) => {
+      const transcript = Array.from(e.results).map((r: any) => r[0].transcript).join("");
+      setText(transcript);
+    };
+    rec.onend = () => setListening(false);
+    rec.onerror = () => setListening(false);
+    recognitionRef.current = rec;
+    return () => { try { rec.abort(); } catch { /* noop */ } };
+  }, []);
+
+  const toggleMic = () => {
+    const rec = recognitionRef.current;
+    if (!rec) return;
+    if (listening) {
+      rec.stop();
+      setListening(false);
+    } else {
+      try { rec.start(); setListening(true); } catch { /* already started */ }
+    }
+  };
+
+  const fire = () => {
+    const t = text.trim();
+    if (t) onAsk(t);
+  };
+
+  return (
+    <div className="flex gap-2">
+      <div className="relative flex-1">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+        <Input
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Enter") fire(); }}
+          className="pl-9 pr-10 h-11"
+          placeholder={listening ? "Listening…" : "Ask a question, e.g. Which lawyer handles GmbH setup?"}
+        />
+        {supported && (
+          <button
+            type="button"
+            onClick={toggleMic}
+            aria-label={listening ? "Stop voice input" : "Start voice input"}
+            className={`absolute right-2 top-1/2 -translate-y-1/2 grid place-items-center size-7 rounded-md transition ${listening ? "bg-destructive text-white animate-pulse" : "text-muted-foreground hover:bg-elevated"}`}
+          >
+            {listening ? <MicOff className="size-4" /> : <Mic className="size-4" />}
+          </button>
+        )}
+      </div>
+      <Button className="h-11 bg-primary hover:bg-primary-hover" onClick={fire} disabled={!text.trim()}>
+        <Sparkles className="size-4" /> Ask
+      </Button>
     </div>
   );
 }

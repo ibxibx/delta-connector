@@ -13,13 +13,17 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/_app/ask")({
   head: () => ({ meta: [{ title: "Ask & Discover — Delta Connector" }] }),
+  validateSearch: (search: Record<string, unknown>): { q?: string } => {
+    return { q: typeof search.q === "string" ? search.q : undefined };
+  },
   component: Ask,
 });
 
 const stages = ["Searching previous answers…", "Checking category fit…", "Looking for founder-validated responses…", "Ranking by trust and helpfulness…"];
 
 function Ask() {
-  const [q, setQ] = useState("Which tax advisor is good for a VC-backed GmbH in Berlin?");
+  const { q: incomingQ } = Route.useSearch();
+  const [q, setQ] = useState(incomingQ || "Which tax advisor is good for a VC-backed GmbH in Berlin?");
   const [phase, setPhase] = useState<"idle" | "processing" | "results">("idle");
   const [stageIdx, setStageIdx] = useState(0);
   const [fitted, setFitted] = useState<Record<string, boolean>>({});
@@ -37,10 +41,12 @@ function Ask() {
     return () => ivs.forEach(clearTimeout);
   }, [phase]);
 
-  const submit = async () => {
+  const submit = async (queryText?: string) => {
+    const query = (queryText ?? q).trim();
+    if (!query) return;
     setPhase("processing");
     try {
-      const { answers: got } = await askApi(q, { stage: "pre-seed", industry: "saas" });
+      const { answers: got } = await askApi(query, { stage: "pre-seed", industry: "saas" });
       // keep the loading visible briefly so it reads as "agents working"
       await new Promise((r) => setTimeout(r, 900));
       setResults(got);
@@ -52,6 +58,15 @@ function Ask() {
       toast.error("Couldn't reach the answer service", { description: String(e) });
     }
   };
+
+  // If we arrived from the Home ask box (?q=...), run that search automatically.
+  useEffect(() => {
+    if (incomingQ && incomingQ.trim()) {
+      setQ(incomingQ);
+      submit(incomingQ);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [incomingQ]);
 
   const markFits = async (a: UiAnswer) => {
     setFitted((f) => ({ ...f, [a.id]: true }));
@@ -79,7 +94,7 @@ function Ask() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
             <Input value={q} onChange={(e) => setQ(e.target.value)} className="pl-9 h-11" placeholder="Ask something like: Which tax advisor is good for a VC-backed GmbH in Berlin?" />
           </div>
-          <Button className="h-11 bg-primary hover:bg-primary-hover" onClick={submit}>
+          <Button className="h-11 bg-primary hover:bg-primary-hover" onClick={() => submit()}>
             <Sparkles className="size-4" /> Find trusted answers
           </Button>
         </div>

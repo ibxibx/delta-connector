@@ -98,8 +98,9 @@ function Hero() {
             <span className="block text-gradient-agentic">Succeed faster.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-            Delta Connector turns Berlin's hidden founder knowledge into a searchable,
-            peer-validated ecosystem graph.
+            The connective layer for Berlin's startup ecosystem — turning the trusted advice
+            buried in WhatsApp groups into searchable, peer-sourced knowledge, so the next
+            founder starts ahead of the last.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="bg-primary hover:bg-primary-hover">

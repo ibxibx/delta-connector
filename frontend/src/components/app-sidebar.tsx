@@ -29,7 +29,7 @@ export function AppSidebar() {
           />
           <div className="flex flex-col leading-tight group-data-[collapsible=icon]:hidden">
             <span className="text-sm font-semibold text-sidebar-foreground">Delta Connector</span>
-            <span className="text-[10px] text-sidebar-foreground/60">Berlin Founder Graph</span>
+            <span className="text-[10px] text-sidebar-foreground/60">Connecting founders to the people &amp; resources they need</span>
           </div>
         </Link>
       </SidebarHeader>
