@@ -1,0 +1,70 @@
+{
+  "answers": [
+    {
+      "id": "answer_001",
+      "answer_text": "For a VC-backed GmbH, choose a tax advisor with DATEV, payroll, investor reporting, and financing experience. Avoid generalist advisors without startup experience.",
+      "answer_provider_id": "actor_002",
+      "help_categories": ["Tax/Admin"],
+      "stage_context": "pre-seed",
+      "helpfulness_count": 12,
+      "fit_confirmations": 8,
+      "follow_up_requests": 3,
+      "trust_evidence": "Helpful for 12 founders. Verified in Tax/Admin by 8 founders.",
+      "provider_confirmed": true,
+      "visibility": "network_only"
+    },
+    {
+      "id": "answer_002",
+      "answer_text": "For GmbH incorporation as a non-EU founder, work with a notary early and a lawyer who has done founder agreements and cap tables. Budget 2-3 weeks for the process.",
+      "answer_provider_id": "actor_003",
+      "help_categories": ["Legal", "Visa/Relocation"],
+      "stage_context": "pre-incorporation",
+      "helpfulness_count": 9,
+      "fit_confirmations": 6,
+      "follow_up_requests": 2,
+      "trust_evidence": "Helpful for 9 founders. Recommended by 4 verified founders at your stage.",
+      "provider_confirmed": true,
+      "visibility": "network_only"
+    },
+    {
+      "id": "answer_003",
+      "answer_text": "For Anmeldung, book a Bürgeramt appointment the moment you have a rental contract; slots disappear fast. You need the Wohnungsgeberbestätigung from your landlord.",
+      "answer_provider_id": "actor_004",
+      "help_categories": ["Visa/Relocation", "Housing"],
+      "stage_context": "arriving",
+      "helpfulness_count": 21,
+      "fit_confirmations": 15,
+      "follow_up_requests": 5,
+      "trust_evidence": "Helpful for 21 founders. One of the most-confirmed answers in Relocation.",
+      "provider_confirmed": true,
+      "visibility": "network_only"
+    },
+    {
+      "id": "answer_004",
+      "answer_text": "For pre-seed funding in Berlin, start with angels in your sector before institutional VCs. Warm intros convert far better than cold outreach; aim for a clean SAFE or convertible.",
+      "answer_provider_id": "actor_005",
+      "help_categories": ["Funding"],
+      "stage_context": "pre-seed",
+      "helpfulness_count": 14,
+      "fit_confirmations": 9,
+      "follow_up_requests": 4,
+      "trust_evidence": "Helpful for 14 founders. Verified in Funding.",
+      "provider_confirmed": true,
+      "visibility": "network_only"
+    },
+    {
+      "id": "answer_005",
+      "answer_text": "For early coworking that connects you to the ecosystem, pick a space with an active founder community and events, not just desks. Ask about their startup network before signing.",
+      "answer_provider_id": "actor_006",
+      "help_categories": ["Workspace", "Community"],
+      "stage_context": "arriving",
+      "helpfulness_count": 7,
+      "fit_confirmations": 4,
+      "follow_up_requests": 1,
+      "trust_evidence": "Helpful for 7 founders. Trusted coworking node.",
+      "provider_confirmed": true,
+      "visibility": "network_only"
+    }
+  ],
+  "_note": "PRD-shaped (§18) answer seed for the /ask demo. Stand-in for Supabase + pgvector; replace with real data layer per IMPLEMENTATION_PLAN.md."
+}

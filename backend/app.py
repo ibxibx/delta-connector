@@ -5,6 +5,7 @@ and composes the response per the API contract (docs/API_CONTRACT.md).
 """
 from __future__ import annotations
 import json
+import os
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -13,10 +14,18 @@ from pydantic import BaseModel
 
 from agents.champion_matcher import match_champions
 from agents.mentor_matcher import match_mentors
+from agents.answer_retrieval import retrieve_answers
+from agents.outreach import draft_follow_up
+from agents.metrics import compute_metrics, record_fit
 
 app = FastAPI(title="Delta-Connector API")
+
+# CORS: defaults to "*" for local dev; set ALLOWED_ORIGINS (comma-separated) in
+# production to lock it to the deployed Lovable frontend domain.
+_origins = os.environ.get("ALLOWED_ORIGINS", "*")
+_origin_list = ["*"] if _origins.strip() == "*" else [o.strip() for o in _origins.split(",")]
 app.add_middleware(
-    CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
+    CORSMiddleware, allow_origins=_origin_list, allow_methods=["*"], allow_headers=["*"]
 )
 
 _DATA_PATH = Path(__file__).parent / "data" / "seed.json"
@@ -26,6 +35,61 @@ class MatchRequest(BaseModel):
     query: str = ""
     profile: dict | None = None
     want: list[str] = ["champions", "mentors"]
+
+
+class AskRequest(BaseModel):
+    query: str = ""
+    profile: dict | None = None
+
+
+@app.post("/ask")
+def ask(req: AskRequest):
+    """Ask & Discover (PRD Core Flow 2): return previous trusted answers as
+    MatchResult cards with anonymized trust evidence. If none fit, the client
+    offers 'post publicly'."""
+    answers = retrieve_answers(req.query, req.profile)
+    return {
+        "query": req.query,
+        "answers": answers,
+        "post_publicly_available": True,
+    }
+
+
+class FollowUpRequest(BaseModel):
+    answer_summary: str = ""
+    question: str = ""
+    asker_name: str = ""
+    consent_ok: bool = False
+
+
+@app.post("/follow-up-draft")
+def follow_up_draft(req: FollowUpRequest):
+    """Draft a follow-up message to the answer provider (PRD Outreach Agent).
+    Returns a draft only when consent_ok is True; never sends. The user approves
+    before anything is sent (PRD §17.4)."""
+    return draft_follow_up(
+        answer_summary=req.answer_summary,
+        question=req.question,
+        asker_name=req.asker_name,
+        consent_ok=req.consent_ok,
+    )
+
+
+class FitRequest(BaseModel):
+    answer_id: str
+
+
+@app.post("/answer-fits")
+def answer_fits(req: FitRequest):
+    """User marked an answer as fitting (PRD §15.5): bump fit + helpfulness so
+    the answer ranks better and the provider's metrics grow."""
+    return record_fit(req.answer_id)
+
+
+@app.get("/metrics")
+def metrics(actor_id: str):
+    """Private personal metrics + trust score (PRD §15.10, §16). Private by default."""
+    return compute_metrics(actor_id)
 
 
 @app.post("/match")

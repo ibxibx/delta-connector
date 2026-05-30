@@ -1,0 +1,4 @@
+answer_text,help_categories,stage_context,helpfulness_count,fit_confirmations,follow_up_requests,trust_evidence,provider_confirmed
+"For a VC-backed GmbH, choose a tax advisor with DATEV, payroll, investor reporting, and financing experience. Avoid generalist advisors without startup experience.",Tax/Admin,pre-seed,12,8,3,"Helpful for 12 founders. Verified in Tax/Admin by 8 founders.",TRUE
+"For GmbH incorporation as a non-EU founder, work with a notary early and a lawyer who has done founder agreements and cap tables. Budget 2-3 weeks.",Legal|Visa/Relocation,pre-incorporation,9,6,2,"Helpful for 9 founders. Recommended by 4 verified founders at your stage.",TRUE
+"For Anmeldung, book a Bürgeramt appointment the moment you have a rental contract; slots vanish fast. You need the Wohnungsgeberbestätigung from your landlord.",Visa/Relocation|Housing,arriving,21,15,5,"Helpful for 21 founders. One of the most-confirmed answers in Relocation.",TRUE
