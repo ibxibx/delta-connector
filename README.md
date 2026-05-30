@@ -344,7 +344,7 @@ Built at a Berlin hackathon by a team of three, building in parallel:
 | --- | --- | --- |
 | **Nicolai Gruber** | [@unicOOde](https://github.com/unicOOde) | Data model + trust-graph core (My Network) |
 | **Ian Baumeister** | [@ibxibx](https://github.com/ibxibx) | Backend + agent orchestration, frontend integration, deployment |
-| **Lauritz** | - | Frontend (Lovable/React) + demo + seed data |
+| **Lauritz Elmshäuser** | - | Frontend (Lovable/React) + demo + seed data |
 
 Development was assisted by five Claude Code subagents in [`.claude/agents/`](.claude/agents)
 (`task-planner`, `architect`, `test-engineer`, `backend-coder`, `frontend-coder`), all following
