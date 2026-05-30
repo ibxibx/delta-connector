@@ -13,3 +13,6 @@ dist/
 # IDE
 .idea/
 .vscode/
+
+# Scratch / source-staging dirs (not part of the app)
+frontend_new/
