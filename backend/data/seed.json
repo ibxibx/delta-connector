@@ -1,0 +1,16 @@
+{
+  "champions": [
+    { "id": "c_001", "name": "Dr. Lena Vogt", "field": "Legal / GmbH formation", "top_strengths": ["incorporation", "cap tables", "founder agreements"] },
+    { "id": "c_002", "name": "Marek Sliwinski", "field": "Tax & accounting", "top_strengths": ["startup taxation", "VAT", "payroll setup"] },
+    { "id": "c_003", "name": "Priya Nandakumar", "field": "Fundraising", "top_strengths": ["pre-seed decks", "angel intros", "SAFE notes"] },
+    { "id": "c_004", "name": "Jonas Reuter", "field": "Engineering hiring", "top_strengths": ["technical interviewing", "early team building", "contractor vetting"] },
+    { "id": "c_005", "name": "Sofia Almeida", "field": "Go-to-market", "top_strengths": ["B2B sales", "positioning", "first customers"] }
+  ],
+  "mentors": [
+    { "id": "m_001", "name": "Tomas Berg", "industry": "fintech", "years_in_berlin": 7, "note": "Founded a fintech GmbH; mentored 4 founders" },
+    { "id": "m_002", "name": "Hana Okafor", "industry": "healthtech", "years_in_berlin": 5, "note": "Scaled a healthtech startup from 0 to 20 people" },
+    { "id": "m_003", "name": "Lukas Brandt", "industry": "saas", "years_in_berlin": 9, "note": "Two SaaS exits; deep local investor network" },
+    { "id": "m_004", "name": "Yara Demir", "industry": "fintech", "years_in_berlin": 3, "note": "Recently navigated incorporation + visa as a newcomer" },
+    { "id": "m_005", "name": "Erik Sandberg", "industry": "marketplace", "years_in_berlin": 11, "note": "Long-time Berlin operator; housing + workspace know-how" }
+  ]
+}

@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Node / Lovable frontend
+node_modules/
+dist/
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
