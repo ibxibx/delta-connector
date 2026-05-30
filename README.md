@@ -1,6 +1,10 @@
-# Delta Connector
+<p align="center">
+  <img src="pics/delta-connector-logo.png" alt="Delta Connector logo" width="240">
+</p>
 
-**The agentic trust layer for Berlin's startup ecosystem.**
+<h1 align="center">Delta Connector</h1>
+
+<p align="center"><strong>The agentic trust layer for Berlin's startup ecosystem.</strong></p>
 
 Delta Connector turns hidden startup-ecosystem knowledge into a trusted, searchable, agentic network where founders and stakeholders find the right people, answers, services, and resources through peer-validated recommendations.
 
@@ -89,10 +93,12 @@ python ../tests/test_agents.py   # run tests
 ## Repo layout
 
 ```
-backend/        FastAPI app, matcher agents, seed data
-docs/           API_CONTRACT.md, PLAN.md
+backend/        FastAPI app, agents (matchers, answer-retrieval, outreach, metrics), seed data
+docs/           API_CONTRACT.md, PLAN.md, IMPLEMENTATION_PLAN.md
 pdr/            product_requirements_document.md + design drafts
-.claude/        agents/ (4 subagents), skills/ (engineering discipline)
+pics/           logo and brand assets
+frontend/       fallback-components (CursorHighlight, TrustGraph, AnimatedAnswerCard)
+.claude/        agents/ (5 subagents), skills/ (engineering discipline)
 tests/          zero-dependency test harness
 CLAUDE.md       project context for Claude Code sessions
 ```
