@@ -1,11 +1,11 @@
-Add deploy config: Render blueprint for backend + frontend
+Rewrite README: full project overview, agents, specs, screenshots, video
 
-- render.yaml now defines both services: delta-connector-api (FastAPI,
-  uvicorn on $PORT) and delta-connector-web (TanStack Start SSR, Node).
-- frontend/vite.config.ts: force nitro on with the node-server preset so
-  the build emits a standalone server (dist/server/index.mjs) listening
-  on $PORT. Verified: builds, boots, serves 200.
-- frontend/.env.example documents VITE_API_BASE (build-time).
-- frontend/.node-version pins Node 22.17.0.
-- DEPLOY.md: Blueprint deploy steps + wiring ALLOWED_ORIGINS / VITE_API_BASE.
-- Includes the My Network graph white-background tweak.
+- Pitch & demo video (Loom) linked at the top.
+- 3 screenshots from pics/ (Landing, Dashboard, Ask champion-reveal) each
+  with a description of what it depicts.
+- Full technical implementation: architecture diagram, tech stack
+  (TanStack Start SSR / FastAPI), API reference table, trust-score model.
+- All five agents documented with files + endpoints + behavior, plus an
+  honest note that they are rule-based stand-ins with a clean LLM drop-in.
+- Data pipeline (38 champions / 50 questions, regenerable), local dev,
+  deployment (Render), repo layout, and team.
