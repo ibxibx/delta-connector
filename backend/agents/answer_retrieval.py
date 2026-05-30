@@ -13,20 +13,25 @@ from pathlib import Path
 
 _ANSWERS = json.loads((Path(__file__).parent.parent / "data" / "answers.json").read_text(encoding="utf-8"))["answers"]
 
-# light keyword -> category hints so a plain question maps to help categories
-_CATEGORY_HINTS = {
-    "tax": "Tax/Admin", "datev": "Tax/Admin", "accountant": "Tax/Admin", "advisor": "Tax/Admin",
-    "lawyer": "Legal", "gmbh": "Legal", "incorporation": "Legal", "notary": "Legal",
-    "visa": "Visa/Relocation", "anmeldung": "Visa/Relocation", "relocation": "Visa/Relocation",
-    "housing": "Housing", "flat": "Housing", "apartment": "Housing",
-    "funding": "Funding", "investor": "Funding", "angel": "Funding", "raise": "Funding", "seed": "Funding",
-    "coworking": "Workspace", "workspace": "Workspace", "desk": "Workspace",
+# Industry/sphere keywords present in the dataset's help_categories.
+_INDUSTRY_KEYWORDS = {
+    "climatetech": "climatetech", "climate": "climatetech",
+    "deeptech": "deeptech", "deep tech": "deeptech",
+    "edtech": "edtech", "education": "edtech",
+    "fintech": "fintech", "finance": "fintech",
+    "healthtech": "healthtech", "health": "healthtech",
+    "marketplace": "marketplace",
+    "mobility": "mobility",
+    "proptech": "proptech", "property": "proptech", "real estate": "proptech",
+    "saas": "saas",
+    "future-of-work": "future-of-work", "future of work": "future-of-work",
+    "b2b": "B2B", "b2c": "B2C",
 }
 
 
 def _detect_categories(query: str) -> set[str]:
     q = query.lower()
-    return {cat for kw, cat in _CATEGORY_HINTS.items() if kw in q}
+    return {cat for kw, cat in _INDUSTRY_KEYWORDS.items() if kw in q}
 
 
 def retrieve_answers(query: str, profile: dict | None = None, limit: int = 3) -> list[dict]:
@@ -35,6 +40,8 @@ def retrieve_answers(query: str, profile: dict | None = None, limit: int = 3) ->
     q = (query or "").lower()
     q_tokens = {t for t in q.split() if len(t) > 3}
     detected = _detect_categories(query)
+    # also let the profile's industry steer matching
+    detected |= _detect_categories((profile.get("industry") or ""))
     stage = (profile.get("company_stage") or profile.get("stage") or "").lower()
 
     results = []
@@ -48,16 +55,24 @@ def retrieve_answers(query: str, profile: dict | None = None, limit: int = 3) ->
 
         cat_overlap = detected & set(a["help_categories"])
         if cat_overlap:
-            score += 0.45
-            reasons.append(f"Strong {', '.join(sorted(cat_overlap))} category match")
+            score += 0.35
+            reasons.append(f"Strong {', '.join(sorted(cat_overlap))} match")
+
+        # question-text overlap is the strongest signal in this dataset
+        stored_q = (a.get("question_text") or "").lower()
+        q_hits = sum(1 for t in q_tokens if t in stored_q)
+        if q_hits:
+            score += min(0.12 * q_hits, 0.40)
+            reasons.append("Similar question answered before")
 
         text_hits = sum(1 for t in q_tokens if t in a["answer_text"].lower())
         if text_hits:
-            score += min(0.10 * text_hits, 0.30)
-            reasons.append("Similar question answered before")
+            score += min(0.08 * text_hits, 0.20)
+            if "Similar question answered before" not in reasons:
+                reasons.append("Relevant to your question")
 
-        if stage and stage in a["stage_context"].lower():
-            score += 0.15
+        if stage and stage in a["stage_context"].lower() and a["stage_context"] != "any":
+            score += 0.10
             reasons.append(f"Relevant to {a['stage_context']}")
 
         # helpfulness as a tiebreaker, lightly weighted

@@ -2,69 +2,2164 @@
   "answers": [
     {
       "id": "answer_001",
-      "answer_text": "For a VC-backed GmbH, choose a tax advisor with DATEV, payroll, investor reporting, and financing experience. Avoid generalist advisors without startup experience.",
-      "answer_provider_id": "actor_002",
-      "help_categories": ["Tax/Admin"],
-      "stage_context": "pre-seed",
-      "helpfulness_count": 12,
-      "fit_confirmations": 8,
-      "follow_up_requests": 3,
-      "trust_evidence": "Helpful for 12 founders. Verified in Tax/Admin by 8 founders.",
+      "answer_text": "Active Berlin-based climatetech investors at pre-seed: Vireo Ventures (dedicated climate fund), UVC Partners (deep tech including climate), and World Fund (Europe-wide but Berlin-headquartered, very active). Also look at Ecosummit Berlin — it is the best climatetech investor event in the city.",
+      "answer_provider_id": "1fb498ec",
+      "question_text": "Which Berlin VCs are actively investing in climatetech pre-seed rounds right now?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
       "provider_confirmed": true,
-      "visibility": "network_only"
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
     },
     {
       "id": "answer_002",
-      "answer_text": "For GmbH incorporation as a non-EU founder, work with a notary early and a lawyer who has done founder agreements and cap tables. Budget 2-3 weeks for the process.",
-      "answer_provider_id": "actor_003",
-      "help_categories": ["Legal", "Visa/Relocation"],
-      "stage_context": "pre-incorporation",
-      "helpfulness_count": 9,
-      "fit_confirmations": 6,
-      "follow_up_requests": 2,
-      "trust_evidence": "Helpful for 9 founders. Recommended by 4 verified founders at your stage.",
+      "answer_text": "Best places to find energy systems talent in Berlin: TU Berlin Energy Engineering department (strong alumni network), Fraunhofer ISE alumni (many end up in Berlin startups), and the Renewables Networking Berlin Meetup. Post on Wellfound with Berlin as location and climate as sector.",
+      "answer_provider_id": "ea0e8901",
+      "question_text": "We are looking for a technical co-founder with a background in energy systems in Berlin. Where should we be searching?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
       "provider_confirmed": true,
-      "visibility": "network_only"
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
     },
     {
       "id": "answer_003",
-      "answer_text": "For Anmeldung, book a Bürgeramt appointment the moment you have a rental contract; slots disappear fast. You need the Wohnungsgeberbestätigung from your landlord.",
-      "answer_provider_id": "actor_004",
-      "help_categories": ["Visa/Relocation", "Housing"],
-      "stage_context": "arriving",
-      "helpfulness_count": 21,
-      "fit_confirmations": 15,
-      "follow_up_requests": 5,
-      "trust_evidence": "Helpful for 21 founders. One of the most-confirmed answers in Relocation.",
+      "answer_text": "Key programs: Exist Gründerstipendium (if you have university affiliation), ILB ProBrand in Brandenburg (up to €200k for innovative Brandenburg-based startups), and the European Innovation Council (EIC) Accelerator for deep climate tech. Also check BMWK funding calls — several are climate-specific.",
+      "answer_provider_id": "e322e52c",
+      "question_text": "Are there climatetech-specific grants or public funding programs available in Berlin or Brandenburg?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
       "provider_confirmed": true,
-      "visibility": "network_only"
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
     },
     {
       "id": "answer_004",
-      "answer_text": "For pre-seed funding in Berlin, start with angels in your sector before institutional VCs. Warm intros convert far better than cold outreach; aim for a clean SAFE or convertible.",
-      "answer_provider_id": "actor_005",
-      "help_categories": ["Funding"],
-      "stage_context": "pre-seed",
-      "helpfulness_count": 14,
-      "fit_confirmations": 9,
-      "follow_up_requests": 4,
-      "trust_evidence": "Helpful for 14 founders. Verified in Funding.",
+      "answer_text": "From a tax angle: R&D tax credits (Forschungslagengesetz) are underused by Berlin startups. If your climate tech involves genuine R&D, you can claim 25% of R&D personnel costs back as a tax credit — up to €1M per year. Your Steuerberater must apply for this explicitly.",
+      "answer_provider_id": "a01abb15",
+      "question_text": "Are there climatetech-specific grants or public funding programs available in Berlin or Brandenburg?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
       "provider_confirmed": true,
-      "visibility": "network_only"
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
     },
     {
       "id": "answer_005",
-      "answer_text": "For early coworking that connects you to the ecosystem, pick a space with an active founder community and events, not just desks. Ask about their startup network before signing.",
-      "answer_provider_id": "actor_006",
-      "help_categories": ["Workspace", "Community"],
-      "stage_context": "arriving",
-      "helpfulness_count": 7,
-      "fit_confirmations": 4,
-      "follow_up_requests": 1,
-      "trust_evidence": "Helpful for 7 founders. Trusted coworking node.",
+      "answer_text": "Also look at Supermarkt Berlin in Wedding — it is a cooperative coworking space with a strong sustainability ethos and a community of freelancers, NGOs, and impact startups. Cheaper than The Delta and EUREF, good if budget is tight at pre-seed.",
+      "answer_provider_id": "eb9b7d27",
+      "question_text": "Which Berlin coworking spaces have a strong sustainability or climatetech community?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 11,
+      "fit_confirmations": 7,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.3/5 · helpful for 11 founders",
       "provider_confirmed": true,
-      "visibility": "network_only"
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_006",
+      "answer_text": "The Cleantech Hub Berlin at EUREF Campus in Schöneberg is specifically built for this. It houses energy and mobility startups and the community is tight — walk in, introduce yourself, and you will meet the right people within two visits.",
+      "answer_provider_id": "9e1353ab",
+      "question_text": "We are looking for a technical co-founder with a background in energy systems in Berlin. Where should we be searching?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_007",
+      "answer_text": "EUREF Campus in Schöneberg is the best in Berlin for climatetech — it is a dedicated energy and mobility hub with Vattenfall, startups, and research institutions on site. The Delta in Mitte is strong for general tech and has a growing sustainability cluster. Both are worth a visit before committing.",
+      "answer_provider_id": "80617694",
+      "question_text": "Which Berlin coworking spaces have a strong sustainability or climatetech community?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_008",
+      "answer_text": "We tried three spaces before settling. The Delta won us over because the community is curated — they are selective about who joins, which means the quality of spontaneous conversations is high. For a climatetech team, the cross-pollination with other impact startups there is real.",
+      "answer_provider_id": "0d7ac7f1",
+      "question_text": "Which Berlin coworking spaces have a strong sustainability or climatetech community?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_009",
+      "answer_text": "Do not overlook corporate VCs: BASF Ventures, Vattenfall Ventures, and Bosch Ventures all have Berlin presence and write climate-relevant checks. Corporate VCs move slower but can bring pilot customers, which matters more than capital at pre-seed.",
+      "answer_provider_id": "95a2df8e",
+      "question_text": "Which Berlin VCs are actively investing in climatetech pre-seed rounds right now?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_010",
+      "answer_text": "We combined Exist with a KfW Energy Efficiency grant for our hardware component. Stacking non-dilutive funding from multiple programs is legal and common — just make sure the use-of-funds do not overlap between applications.",
+      "answer_provider_id": "70085836",
+      "question_text": "Are there climatetech-specific grants or public funding programs available in Berlin or Brandenburg?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_011",
+      "answer_text": "The Ecosummit conference in Berlin is where the serious climatetech investors show up. Apply to pitch there — even if you do not win, the hallway conversations with World Fund and Vireo are worth the trip.",
+      "answer_provider_id": "2b4bdb23",
+      "question_text": "Which Berlin VCs are actively investing in climatetech pre-seed rounds right now?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_012",
+      "answer_text": "Do not underestimate LinkedIn for this specific search. Filter for TU Berlin or HTW Berlin graduates with energy or electrical engineering backgrounds who are currently at startups — they are more likely to be open to a co-founder conversation than someone at Siemens Energy.",
+      "answer_provider_id": "f58807ca",
+      "question_text": "We are looking for a technical co-founder with a background in energy systems in Berlin. Where should we be searching?",
+      "help_categories": [
+        "climatetech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_013",
+      "answer_text": "Essential clauses: vesting schedule with cliff, drag-along and tag-along rights, right of first refusal on share transfers, deadlock resolution mechanism, IP assignment (all work done for the company belongs to the company), and good/bad leaver provisions. Do not skip the deadlock clause — it is the one founders regret missing most.",
+      "answer_provider_id": "22218039",
+      "question_text": "What does a shareholder agreement need to cover for a two-founder GmbH?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 24,
+      "fit_confirmations": 16,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 5.0/5 · helpful for 24 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_014",
+      "answer_text": "With long sales cycles, traditional PMF signals (retention, NPS) take too long to arrive. Instead, track leading indicators: do prospects urgently make time to see you? Do they introduce you to colleagues unprompted? Are they willing to pay even for a pilot? These signal real pull before revenue arrives.",
+      "answer_provider_id": "0bebc86d",
+      "question_text": "How do I find product-market fit as a B2B deeptech startup with a long sales cycle?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_015",
+      "answer_text": "Deeptech decks need one extra slide non-deeptech decks do not: a credibility slide. Show your teams technical background, any IP, publications, or patents. Investors need to believe you can build what you are describing before they care about the market. Keep it to 12 slides max.",
+      "answer_provider_id": "014ad588",
+      "question_text": "How do I build an investor pitch deck for a deeptech pre-seed round?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_016",
+      "answer_text": "Do not go to networking events to pitch. Go to learn and help others. Berlin founders have a strong pay-it-forward culture — if you are generous with your knowledge and connections first, the right people will find you.",
+      "answer_provider_id": "0b4b1095",
+      "question_text": "What is the Berlin startup networking scene like and where should I show up as a new founder?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_017",
+      "answer_text": "Also add a non-compete and non-solicitation clause. It feels unnecessary on day one but matters enormously if a co-founder leaves and starts a competing company six months later.",
+      "answer_provider_id": "4fb02f66",
+      "question_text": "What does a shareholder agreement need to cover for a two-founder GmbH?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_018",
+      "answer_text": "We skipped the deadlock resolution clause and spent six months in a standoff with no legal mechanism to resolve it. Cost us time, money, and almost the company. Do not skip it.",
+      "answer_provider_id": "fbf83f7c",
+      "question_text": "What does a shareholder agreement need to cover for a two-founder GmbH?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_019",
+      "answer_text": "The biggest mistake deeptech founders make is spending 8 slides on technology and 2 on business model. Flip it. Investors fund businesses, not research projects. Lead with the problem and market, then explain why your tech is the unfair advantage.",
+      "answer_provider_id": "dc70c51c",
+      "question_text": "How do I build an investor pitch deck for a deeptech pre-seed round?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_020",
+      "answer_text": "The Berlin scene is dense and surprisingly accessible. Key recurring events: Founders & Friends (monthly, 300+ people), Tech Open Air satellite events, and various vertical Stammtisch meetups. Show up consistently — Berlin rewards persistence over one-off appearances.",
+      "answer_provider_id": "b2038a54",
+      "question_text": "What is the Berlin startup networking scene like and where should I show up as a new founder?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_021",
+      "answer_text": "Run paid pilots, not free ones. Paying customers give honest feedback; free users are polite. Even €5k for a 3-month pilot validates willingness to pay and focuses the customer on outcomes.",
+      "answer_provider_id": "848f9be3",
+      "question_text": "How do I find product-market fit as a B2B deeptech startup with a long sales cycle?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_022",
+      "answer_text": "Talk to 50 potential customers before you have a product. Map their current workflow in detail. PMF in deeptech is often about inserting yourself into an existing process rather than creating a new one.",
+      "answer_provider_id": "6f408ffe",
+      "question_text": "How do I find product-market fit as a B2B deeptech startup with a long sales cycle?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_023",
+      "answer_text": "Factory Berlin, Mindspace, and the Startup Night Berlin events are the highest-density founder gatherings. LinkedIn is surprisingly active in the Berlin scene too — post thoughtfully and people will reach out.",
+      "answer_provider_id": "1b86ffc6",
+      "question_text": "What is the Berlin startup networking scene like and where should I show up as a new founder?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_024",
+      "answer_text": "Get a demo in front of investors as early as possible — even a rough prototype. Deeptech is hard to evaluate from slides alone. A working demo, even limited, builds confidence faster than any deck.",
+      "answer_provider_id": "2e1c379e",
+      "question_text": "How do I build an investor pitch deck for a deeptech pre-seed round?",
+      "help_categories": [
+        "deeptech",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_025",
+      "answer_text": "Yes, a non-German EU citizen can be a GmbH shareholder and Geschäftsführer without restriction — EU freedom of establishment applies. Your Polish co-founder does not need to be registered in Germany as long as the GmbH itself has a German registered address. They will need a German tax ID (Steuer-ID) for the notary appointment.",
+      "answer_provider_id": "0ba3ee98",
+      "question_text": "We are a Polish-German founding team. Can we structure the GmbH with one founder registered in Poland?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 24,
+      "fit_confirmations": 16,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 5.0/5 · helpful for 24 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_026",
+      "answer_text": "Several Berlin-based fractional CFOs specifically serve pre-Seed and Seed startups: look at CFO Connect Berlin community and the Interim CFO listings on Heidrick & Struggles and Kienbaum. Budget €2,000–4,000 per month for a serious fractional CFO with VC round experience.",
+      "answer_provider_id": "23734f90",
+      "question_text": "We need a part-time CFO or finance advisor for our Seed round preparation. How do founders in Berlin typically find fractional finance help?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_027",
+      "answer_text": "EdTech Berlin Meetup runs quarterly and is the most focused gathering for the sector. Also check out Startup Edu Berlin on Meetup.com and the Digital Learning Lab events run by the Berlin Senat — they bring together founders, teachers, and policy people in the same room.",
+      "answer_provider_id": "fe6565eb",
+      "question_text": "What are the best Berlin edtech communities or Stammtisch events for founders?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_028",
+      "answer_text": "I used a fractional CFO for our Series A prep and it was one of the best investments we made. Find someone who has been through a German VC round specifically — the data room requirements and investor reporting standards in Germany differ from US or UK norms.",
+      "answer_provider_id": "8efaa34d",
+      "question_text": "We need a part-time CFO or finance advisor for our Seed round preparation. How do founders in Berlin typically find fractional finance help?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_029",
+      "answer_text": "For a team of 6, The Delta is the better fit. Factory Berlin is great for networking but the office products for small teams are expensive and the space feels corporate at that size. The Delta offers dedicated team rooms, a curated community, and better value per desk for 4–8 person teams.",
+      "answer_provider_id": "6bfe9428",
+      "question_text": "Is Factory Berlin or The Delta better for a Seed-stage edtech team of 6 people?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_030",
+      "answer_text": "EU co-founders have it much easier than non-EU. The main practical issue is the notary appointment — your Polish co-founder needs to be physically present in Berlin or grant a notarised power of attorney (Vollmacht) to someone who can attend in their place.",
+      "answer_provider_id": "66c2e1f6",
+      "question_text": "We are a Polish-German founding team. Can we structure the GmbH with one founder registered in Poland?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_031",
+      "answer_text": "We moved to The Delta after 6 months at a shared space and the productivity jump was immediate. Having a dedicated room your team owns changes the dynamic completely. The Delta also runs regular community events that surface useful connections without you having to go out of your way.",
+      "answer_provider_id": "8c448e03",
+      "question_text": "Is Factory Berlin or The Delta better for a Seed-stage edtech team of 6 people?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_032",
+      "answer_text": "We had a similar situation with a Swedish co-founder. The Vollmacht route worked fine — your German co-founder can hold the power of attorney. Just make sure the Vollmacht is notarised in Poland with an Apostille, otherwise the Berlin notary will not accept it.",
+      "answer_provider_id": "dee35dd4",
+      "question_text": "We are a Polish-German founding team. Can we structure the GmbH with one founder registered in Poland?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_033",
+      "answer_text": "Join the Berlin EdTech WhatsApp group — ask in the EdTech Berlin Meetup for access. It is where the real conversations happen between events. More useful than any formal networking event for finding co-founders, pilots, and warm intros.",
+      "answer_provider_id": "cd9a3f3b",
+      "question_text": "What are the best Berlin edtech communities or Stammtisch events for founders?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_034",
+      "answer_text": "Do a trial week at both before deciding — both offer this. The vibe difference is real. Factory is buzzy and social; The Delta is more focused and operational. For a Seed team that needs to ship, The Delta wins.",
+      "answer_provider_id": "c4b137fa",
+      "question_text": "Is Factory Berlin or The Delta better for a Seed-stage edtech team of 6 people?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_035",
+      "answer_text": "Also ask your Steuerberater if they offer CFO-as-a-service — some Berlin startup-focused firms do. It is cheaper and they already know your books, which saves significant onboarding time.",
+      "answer_provider_id": "2a944657",
+      "question_text": "We need a part-time CFO or finance advisor for our Seed round preparation. How do founders in Berlin typically find fractional finance help?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_036",
+      "answer_text": "The healthtech and edtech communities overlap more than you would expect in Berlin — many founders move between both. Attending Female Founders events and Founders & Friends will get you in front of the right people even if the agenda is not edtech-specific.",
+      "answer_provider_id": "ada2ca5f",
+      "question_text": "What are the best Berlin edtech communities or Stammtisch events for founders?",
+      "help_categories": [
+        "edtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_037",
+      "answer_text": "For B2B SaaS: sales to German businesses are subject to 19% VAT. Sales to EU businesses with a valid VAT ID are zero-rated under the reverse charge mechanism. Sales to non-EU customers are generally outside scope. Register for the OSS (One Stop Shop) scheme if you sell to EU consumers.",
+      "answer_provider_id": "c2ead8cf",
+      "question_text": "How do I handle VAT as a SaaS company selling to both German and EU customers?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 24,
+      "fit_confirmations": 16,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 5.0/5 · helpful for 24 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_038",
+      "answer_text": "In Germany, SAFEs are not yet as standardised as in the US. Most German investors prefer a Wandeldarlehen (convertible loan) as it fits better within GmbH law. That said, some Berlin angels now accept SAFEs — ask your specific investor which they prefer before spending money on legal docs.",
+      "answer_provider_id": "909e1b7b",
+      "question_text": "We are raising a pre-seed round. Should we use a SAFE note or a convertible loan in Germany?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_039",
+      "answer_text": "A healthy pre-seed cap table with two angels: founders retain 80–85%, angels take 10–15%, leave 5–10% for a future ESOP pool. If angels are taking more than 20% at pre-seed, that is too much dilution before product-market fit.",
+      "answer_provider_id": "5981891a",
+      "question_text": "What should a cap table look like after a pre-seed round with two angels?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_040",
+      "answer_text": "Look at the FinLeap and Fintech Forum networks — many active angels come from there. Also check APX (Axel Springer + Porsche accelerator) and Cavalry Ventures for fintech pre-seed. LinkedIn is your friend — search for Berlin fintech operators who have had exits.",
+      "answer_provider_id": "54222a0c",
+      "question_text": "What are the best angel investors in Berlin for fintech startups?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_041",
+      "answer_text": "Model it in a spreadsheet before you close — simulate what Series A dilution looks like from your current cap table. Founders who end up below 40% at Series A struggle to raise Series B. Work backwards from there.",
+      "answer_provider_id": "f67c6c03",
+      "question_text": "What should a cap table look like after a pre-seed round with two angels?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_042",
+      "answer_text": "We used a convertible loan at pre-seed and it worked fine. Key terms to negotiate: valuation cap, discount rate (20% is standard), and maturity date. Keep it simple — a 4-page convertible loan is better than a 20-page one.",
+      "answer_provider_id": "42d661dc",
+      "question_text": "We are raising a pre-seed round. Should we use a SAFE note or a convertible loan in Germany?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_043",
+      "answer_text": "I can intro you to two Berlin fintech angels who are actively writing €25–50k checks. DM me. More broadly, the Berlin Fintech Stammtisch meetup is a great place to get warm intros organically.",
+      "answer_provider_id": "056ec334",
+      "question_text": "What are the best angel investors in Berlin for fintech startups?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_044",
+      "answer_text": "This tripped us up early. Get your VAT ID (Umsatzsteuer-ID) immediately after GmbH formation — it takes 4–6 weeks and you cannot invoice EU customers correctly without it.",
+      "answer_provider_id": "ecc42501",
+      "question_text": "How do I handle VAT as a SaaS company selling to both German and EU customers?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_045",
+      "answer_text": "Use Ledgy or Carta to manage it from day one. Do not manage a cap table in a spreadsheet once you have external investors — errors are costly and hard to fix later.",
+      "answer_provider_id": "d3387dbe",
+      "question_text": "What should a cap table look like after a pre-seed round with two angels?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_046",
+      "answer_text": "I raised on a convertible loan as a newcomer founder. One practical tip: make sure the maturity date gives you enough runway to close your next round — 18 months minimum. Anything shorter creates pressure at the worst time.",
+      "answer_provider_id": "1ec02d40",
+      "question_text": "We are raising a pre-seed round. Should we use a SAFE note or a convertible loan in Germany?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_047",
+      "answer_text": "Do not underestimate operator angels — people who have built and sold fintech companies are often better than financial investors at pre-seed. They bring customers and intros, not just capital.",
+      "answer_provider_id": "6c2c8b35",
+      "question_text": "What are the best angel investors in Berlin for fintech startups?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_048",
+      "answer_text": "Your invoicing software matters here. We use Lexoffice which handles EU VAT rules automatically. Whatever you use, make sure it can generate correct VAT reports for your Steuerberater.",
+      "answer_provider_id": "80f82943",
+      "question_text": "How do I handle VAT as a SaaS company selling to both German and EU customers?",
+      "help_categories": [
+        "fintech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 11,
+      "fit_confirmations": 7,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.3/5 · helpful for 11 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_049",
+      "answer_text": "Standard pre-seed ESOP pool for a Berlin GmbH: 10% of shares reserved as virtual options (VSOPs), not real shares. Real share-based ESOPs in a GmbH are expensive to administer due to notary requirements for every transfer. VSOPs are economically equivalent and far more practical — they are contractual rights, not actual GmbH shares.",
+      "answer_provider_id": "6169fa29",
+      "question_text": "What does a typical ESOP pool look like for a Berlin GmbH at pre-seed and how is it structured legally?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 24,
+      "fit_confirmations": 16,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 5.0/5 · helpful for 24 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_050",
+      "answer_text": "From a tax perspective: VSOPs are taxed as income at exercise (not grant), which is straightforward for employees. Real shares in a GmbH trigger a dry income problem — employees owe tax before they can sell. VSOPs avoid this entirely and are the Berlin startup standard.",
+      "answer_provider_id": "cfba2eae",
+      "question_text": "What does a typical ESOP pool look like for a Berlin GmbH at pre-seed and how is it structured legally?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_051",
+      "answer_text": "For VSOP documentation in Berlin: Orrick, Taylor Wessing, and SMP (Startup-Minded Professionals) all have strong track records with GmbH virtual share programs. SMP is particularly founder-friendly on pricing and has a standardised VSOP template used by many Berlin startups.",
+      "answer_provider_id": "d7965dc2",
+      "question_text": "We are hiring our first two employees and want to offer virtual shares (VSOPs). Which Berlin law firm handles this well?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_052",
+      "answer_text": "For H2 in Berlin: Bits & Pretzels (Munich but all Berlin VCs attend), Startup Night Berlin (October, 1,500+ people), and the EarlyBird VC annual gathering if you can get an invite. Also watch for the Berlin Demo Day run by Axel Springer Plug and Play in Q4.",
+      "answer_provider_id": "c582909c",
+      "question_text": "What Berlin investor events are worth attending in the second half of the year for a future-of-work B2B startup?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_053",
+      "answer_text": "Make sure your VSOP plan includes a good leaver / bad leaver distinction and a change-of-control clause. These are the two provisions that matter most when something actually happens — acquisition or departure. Many startup VSOP templates are weak on both.",
+      "answer_provider_id": "0db30203",
+      "question_text": "We are hiring our first two employees and want to offer virtual shares (VSOPs). Which Berlin law firm handles this well?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_054",
+      "answer_text": "The Israeli-German startup corridor is active in Berlin — the Israeli Embassy economic attaché is a good first contact. Also reach out to the German-Israeli Chamber of Commerce (AHK Israel) in Berlin, they facilitate exactly these kinds of introductions and move faster than going through Startup Nation Central directly.",
+      "answer_provider_id": "69e9711e",
+      "question_text": "We are applying to Startup Nation Central and need a Berlin-side reference. How do we find the right intro?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_055",
+      "answer_text": "The best investor conversations in Berlin happen at small dinners, not big conferences. Ask your warm contacts to host or invite you to one — 12-person founder-investor dinners in Mitte or Prenzlauer Berg are where real relationships get built.",
+      "answer_provider_id": "3fa84c33",
+      "question_text": "What Berlin investor events are worth attending in the second half of the year for a future-of-work B2B startup?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_056",
+      "answer_text": "We used SMP for our VSOP setup. Straightforward process, clear documentation, and they have a template that most Berlin investors and future acquirers will recognise. Do not try to DIY a VSOP — the tax and legal interaction is complex enough that lawyer fees are genuinely worth it.",
+      "answer_provider_id": "973fd8f1",
+      "question_text": "We are hiring our first two employees and want to offer virtual shares (VSOPs). Which Berlin law firm handles this well?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_057",
+      "answer_text": "We used a 10% VSOP pool at pre-seed, expanded to 15% before Series A. Investors will expect to see the pool already created before they invest — do not leave it as a post-money discussion, it will cost you more dilution.",
+      "answer_provider_id": "b387584d",
+      "question_text": "What does a typical ESOP pool look like for a Berlin GmbH at pre-seed and how is it structured legally?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_058",
+      "answer_text": "Tech Open Air (TOA) satellite events in the second half of the year are underrated for investor access — cheaper to attend than the main festival and the crowds are smaller. The side events around TOA week are where the real Berlin VC community shows up.",
+      "answer_provider_id": "99bfb91c",
+      "question_text": "What Berlin investor events are worth attending in the second half of the year for a future-of-work B2B startup?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_059",
+      "answer_text": "LinkedIn is your best tool here. Search for Berlin-based founders or investors who have previously gone through Startup Nation Central programs — they are almost always willing to give a reference call. The community is tight and pay-it-forward oriented.",
+      "answer_provider_id": "49993e1a",
+      "question_text": "We are applying to Startup Nation Central and need a Berlin-side reference. How do we find the right intro?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_060",
+      "answer_text": "The German Accelerator has a Berlin office and strong Israeli connections. They run a specific German-Israeli track and can provide the reference you need while also opening doors on the Israeli investor side.",
+      "answer_provider_id": "5f68dcac",
+      "question_text": "We are applying to Startup Nation Central and need a Berlin-side reference. How do we find the right intro?",
+      "help_categories": [
+        "future-of-work",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_061",
+      "answer_text": "Key ones: Exist Gründerstipendium (up to €150k, non-dilutive, needs university connection), Invest (BAFA, 20% cashback on angel investments), and ProFIT Berlin (IBB, up to €500k for innovative Berlin startups). Apply for Exist first if you have any university affiliation.",
+      "answer_provider_id": "41614233",
+      "question_text": "What grants are available for healthtech startups in Berlin?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_062",
+      "answer_text": "Yes, you can be both shareholder and Geschäftsführer of a GmbH on a non-EU visa, but you will need to apply for a Niederlassungserlaubnis or a specific founder visa (Aufenthaltserlaubnis zur Ausübung einer selbständigen Tätigkeit). The Ausländerbehörde Berlin has a dedicated startup unit — book early, wait times are long.",
+      "answer_provider_id": "27f04249",
+      "question_text": "I am on a non-EU visa. Can I be a GmbH co-founder and geschäftsführer at the same time?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_063",
+      "answer_text": "For healthtech pre-seed: Flying Health (Berlin-based, healthtech specialist), Charité BIH Accelerator (academic/clinical connections), and APX for general pre-seed with a strong Berlin network. Flying Health is the most sector-relevant.",
+      "answer_provider_id": "ea2fd25f",
+      "question_text": "What Berlin accelerators are worth applying to for a healthtech pre-seed startup?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_064",
+      "answer_text": "Berlin is a great test market. Start with your immediate network, then expand via Facebook Groups, Reddit communities, and local Meetup groups relevant to your problem space. Offer free or heavily discounted early access in exchange for feedback and referrals.",
+      "answer_provider_id": "9a05f755",
+      "question_text": "How do we find our first B2C customers in Berlin without a marketing budget?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_065",
+      "answer_text": "From a tax perspective: grants are taxable income in Germany but you can offset them against R&D expenses. Make sure your Steuerberater tracks grant income separately from the start.",
+      "answer_provider_id": "6a86a93e",
+      "question_text": "What grants are available for healthtech startups in Berlin?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_066",
+      "answer_text": "I went through this exact process. Key tip: have your business plan, proof of funding, and GmbH formation documents ready before your Ausländerbehörde appointment. They will ask for all of it. The Make it in Germany website has a good checklist.",
+      "answer_provider_id": "f7f8c0f3",
+      "question_text": "I am on a non-EU visa. Can I be a GmbH co-founder and geschäftsführer at the same time?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 24,
+      "fit_confirmations": 16,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 5.0/5 · helpful for 24 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_067",
+      "answer_text": "We went through Flying Health. The clinical network access was the main value — they got us into 3 pilot hospitals in 6 months. The equity they take (typically 5–8%) is worth it at pre-seed if you need those connections.",
+      "answer_provider_id": "980794a1",
+      "question_text": "What Berlin accelerators are worth applying to for a healthtech pre-seed startup?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_068",
+      "answer_text": "We got Exist and it funded our first year. The application is time-consuming but worth it. The key is framing your innovation clearly — the jury wants to see defensible technology, not just a better UX.",
+      "answer_provider_id": "f4ff4aa1",
+      "question_text": "What grants are available for healthtech startups in Berlin?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_069",
+      "answer_text": "We posted in Berlin expat Facebook groups and got our first 50 users that way. Also try local community boards (Kiez-level), university notice boards, and Instagram with Berlin-specific hashtags. Do things that do not scale at first.",
+      "answer_provider_id": "b708aac5",
+      "question_text": "How do we find our first B2C customers in Berlin without a marketing budget?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_070",
+      "answer_text": "Also talk to a Rechtsanwalt specialising in immigration before your appointment — not just a startup lawyer. The visa question and the GmbH question are separate legal domains and you need someone who understands both.",
+      "answer_provider_id": "1422bf58",
+      "question_text": "I am on a non-EU visa. Can I be a GmbH co-founder and geschäftsführer at the same time?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_071",
+      "answer_text": "Also look at grants before accelerators — Exist Gründerstipendium and Invest (BAFA) are non-dilutive and substantial. Many healthtech founders leave this money on the table by going straight to equity funding.",
+      "answer_provider_id": "0419cd67",
+      "question_text": "What Berlin accelerators are worth applying to for a healthtech pre-seed startup?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_072",
+      "answer_text": "Talk to 20 potential customers before building anything else. Berlin has a culture of directness — people will give you honest feedback if you approach them genuinely. Offer a coffee, not a sales pitch.",
+      "answer_provider_id": "555907ac",
+      "question_text": "How do we find our first B2C customers in Berlin without a marketing budget?",
+      "help_categories": [
+        "healthtech",
+        "B2C"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_073",
+      "answer_text": "Run a paid trial project together for 4–6 weeks before discussing equity. Evaluate: code quality, communication under pressure, how they handle disagreement, and whether they can ship independently. References from past colleagues are more valuable than any interview.",
+      "answer_provider_id": "87a2daa3",
+      "question_text": "How do I vet a technical co-founder before giving away equity?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_074",
+      "answer_text": "In Germany, the risk of Scheinselbständigkeit (false self-employment) is real — if a contractor works exclusively for you, on your equipment, following your hours, the Finanzamt can reclassify them as an employee and back-charge all social contributions. For a core early engineer, full-time employment is cleaner and signals commitment.",
+      "answer_provider_id": "528695da",
+      "question_text": "We need to hire our first engineer. Should we hire a contractor or a full-time employee in Germany?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_075",
+      "answer_text": "50/50 is the simplest and often the best for equal co-founders — it signals trust and avoids resentment. If contributions are unequal, use a vesting schedule (4 years, 1-year cliff) to protect both parties rather than an unequal split. Never start without a vesting agreement.",
+      "answer_provider_id": "50a946fc",
+      "question_text": "What is a fair equity split between two co-founders at pre-seed?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_076",
+      "answer_text": "Investors prefer equal or near-equal splits at pre-seed — big imbalances (e.g. 70/30) raise questions about co-founder alignment. If you go unequal, be ready to explain your reasoning clearly in every investor conversation.",
+      "answer_provider_id": "581afdd8",
+      "question_text": "What is a fair equity split between two co-founders at pre-seed?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_077",
+      "answer_text": "If you do go the contractor route short-term, have your Steuerberater review the contract. Multiple clients, own equipment, and flexible hours are the key factors that support genuine self-employment status.",
+      "answer_provider_id": "b23a0697",
+      "question_text": "We need to hire our first engineer. Should we hire a contractor or a full-time employee in Germany?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_078",
+      "answer_text": "Also consider startup-specific offices in your industry vertical — some healthtech and fintech hubs offer dedicated spaces with curated neighbours. The serendipity of sitting next to a potential customer or partner is underrated.",
+      "answer_provider_id": "0dacf294",
+      "question_text": "Which coworking spaces in Berlin are best for early-stage B2B startups?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 11,
+      "fit_confirmations": 7,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.3/5 · helpful for 11 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_079",
+      "answer_text": "The split matters less than the vesting terms and the co-founder agreement. I have seen 50/50 partnerships fail because there was no buyout mechanism and 60/40 partnerships thrive because everything was documented. Get the agreement done before you need it.",
+      "answer_provider_id": "f9c6bb1c",
+      "question_text": "What is a fair equity split between two co-founders at pre-seed?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_080",
+      "answer_text": "Factory Berlin is where deals get done. The hallway conversations are worth the premium. If budget is tight, get a part-time membership and show up on Tuesdays and Thursdays when it is busiest.",
+      "answer_provider_id": "32a60a60",
+      "question_text": "Which coworking spaces in Berlin are best for early-stage B2B startups?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_081",
+      "answer_text": "We hired contractors first and had to convert two of them later — painful and expensive. If you want someone for more than 6 months and they are working primarily for you, just hire them. The legal risk of misclassification in Germany is not worth it.",
+      "answer_provider_id": "c7511f48",
+      "question_text": "We need to hire our first engineer. Should we hire a contractor or a full-time employee in Germany?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_082",
+      "answer_text": "For B2B startups: Factory Berlin (Mitte and Görlitzer Park) has the strongest startup community and investor foot traffic. WeWork Kudamm is polished but corporate. Ahoy Berlin in Wedding is cheaper and more technical. Mindspace Moritzplatz is a good middle ground.",
+      "answer_provider_id": "ede949a1",
+      "question_text": "Which coworking spaces in Berlin are best for early-stage B2B startups?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_083",
+      "answer_text": "The trial project is the only real filter. Also assess culture fit — you will spend more time with this person than with anyone else. Technical skills can be tested; values and work ethic are harder to fake over 6 weeks.",
+      "answer_provider_id": "b69faf76",
+      "question_text": "How do I vet a technical co-founder before giving away equity?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_084",
+      "answer_text": "Talk to people they have worked with before — not references they give you, but people you find yourself via LinkedIn. Ask specifically: would you work with this person again? The answer tells you everything.",
+      "answer_provider_id": "9b171859",
+      "question_text": "How do I vet a technical co-founder before giving away equity?",
+      "help_categories": [
+        "marketplace",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_085",
+      "answer_text": "Strongly recommend: Urban Innovation Hub Berlin (run in partnership with the Senate), Siemens Mobility Accelerator, and the BVG Labs innovation program. For Seed stage specifically, Urban Innovation Hub is the most relevant — they connect you directly with Berlin public infrastructure clients.",
+      "answer_provider_id": "9de8bba4",
+      "question_text": "Which Berlin mobility or smart city accelerators are worth applying to for a Seed-stage startup?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_086",
+      "answer_text": "From a tax perspective: a GmbH company vehicle is fully deductible but triggers a 1% rule for private use by the Geschäftsführer unless you keep a detailed Fahrtenbuch (mileage log). For a prototype vehicle used purely for testing, document every trip from day one.",
+      "answer_provider_id": "e088f61d",
+      "question_text": "We need to register a company vehicle in Berlin for our hardware prototype. What is the fastest way to do this as a GmbH?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_087",
+      "answer_text": "Best options for hardware prototyping in Berlin: Fab Lab Berlin in Prenzlauer Berg (open access CNC, laser cutting, electronics), Berlin Makerspace in Kreuzberg (community-run, strong mechanical engineering crowd), and the TU Berlin workshops (accessible to affiliated startups via Exist program).",
+      "answer_provider_id": "dae217cf",
+      "question_text": "Are there good hardware-friendly maker spaces or labs in Berlin for mobility startups doing prototype testing?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_088",
+      "answer_text": "Register at the Kfz-Zulassungsstelle Berlin — there are locations in Tempelhof and Pankow. You need your GmbH Handelsregisterauszug, the vehicle documents, proof of insurance (eVB number), and a SEPA mandate for vehicle tax. Online appointment booking is available but slots go fast — book 2 weeks ahead.",
+      "answer_provider_id": "c4a9daf8",
+      "question_text": "We need to register a company vehicle in Berlin for our hardware prototype. What is the fastest way to do this as a GmbH?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_089",
+      "answer_text": "For warm introductions to BVG and Siemens specifically, the Urban Innovation Hub Berlin team can facilitate directly — they have standing relationships with both. A warm intro from them moves 10x faster than cold outreach from a conference.",
+      "answer_provider_id": "9bc08eb9",
+      "question_text": "What Berlin networking events bring together mobility founders, corporates like BVG or Siemens, and investors in the same room?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_090",
+      "answer_text": "The EUREF Campus in Schöneberg is the physical hub of Berlin mobility innovation. BMW, Siemens, and multiple mobility startups are based there. Even without an accelerator program, getting a desk at EUREF puts you in daily contact with the right corporates and co-investors.",
+      "answer_provider_id": "666ab1ab",
+      "question_text": "Which Berlin mobility or smart city accelerators are worth applying to for a Seed-stage startup?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_091",
+      "answer_text": "EUREF Campus has dedicated lab and workshop space for mobility and energy hardware startups — worth applying for residency even if you are not in their accelerator program. The shared equipment and the proximity to Siemens and BMW engineers on campus is a genuine advantage.",
+      "answer_provider_id": "19698399",
+      "question_text": "Are there good hardware-friendly maker spaces or labs in Berlin for mobility startups doing prototype testing?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_092",
+      "answer_text": "The BVG Innovation Night (quarterly, Berlin) consistently brings together BVG procurement, Siemens mobility teams, and startup founders in the same room. Also watch for the ITS Berlin events and the Urban Mobility Summit — both attract the exact mix of corporates and investors you need.",
+      "answer_provider_id": "7f451e8d",
+      "question_text": "What Berlin networking events bring together mobility founders, corporates like BVG or Siemens, and investors in the same room?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_093",
+      "answer_text": "The EUREF Campus open days are underrated for this. They happen 3–4 times a year and corporate partners like Deutsche Bahn, BMW, and Siemens send real decision-makers, not just comms people. Much better signal-to-noise than a big conference.",
+      "answer_provider_id": "370e7626",
+      "question_text": "What Berlin networking events bring together mobility founders, corporates like BVG or Siemens, and investors in the same room?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_094",
+      "answer_text": "We used Fab Lab Berlin for early prototyping. The community is helpful and the equipment is well-maintained. Book time slots in advance — the laser cutters and CNC machines are heavily booked on weekends. Weekday mornings are the sweet spot.",
+      "answer_provider_id": "5a18a7fc",
+      "question_text": "Are there good hardware-friendly maker spaces or labs in Berlin for mobility startups doing prototype testing?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_095",
+      "answer_text": "Also look at Techstars Berlin — they run a mobility-adjacent cohort and have strong corporate partner connections including Deutsche Bahn. The €120k investment is standard Techstars and the network access is worth the 6% equity for a Seed-stage team.",
+      "answer_provider_id": "6cbf672b",
+      "question_text": "Which Berlin mobility or smart city accelerators are worth applying to for a Seed-stage startup?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_096",
+      "answer_text": "We registered two vehicles for our GmbH. The Tempelhof Zulassungsstelle is faster than Pankow in our experience. Go in person rather than using a service — it is straightforward for a GmbH and you save the €150 service fee.",
+      "answer_provider_id": "e83e6084",
+      "question_text": "We need to register a company vehicle in Berlin for our hardware prototype. What is the fastest way to do this as a GmbH?",
+      "help_categories": [
+        "mobility",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_097",
+      "answer_text": "For ESOP and VSOP structuring specifically, I recommend Acconsis Berlin or WTS Advisory — both have dedicated startup practices that understand GmbH equity mechanics, not just standard Steuerberatung. Location does not matter much as everything runs remotely anyway.",
+      "answer_provider_id": "e699e9dc",
+      "question_text": "We are based in Neukölln and looking for a Steuerberater who understands startup equity and ESOP. Any recommendations in Berlin?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_098",
+      "answer_text": "The IBB Gründungskredit goes through your Hausbank, not directly through IBB. You apply at your bank (Deutsche Bank, Commerzbank, Sparkasse Berlin all work), they pass it to IBB. Budget 6–10 weeks. You need a business plan, financial projections, and proof of equity contribution. IBB covers up to €500k at favourable rates.",
+      "answer_provider_id": "7287129e",
+      "question_text": "What is the process for applying to the IBB Gründungskredit in Berlin and how long does it take?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_099",
+      "answer_text": "Notariat Mitte on Französische Strasse and Notar Tobias Reuter in Charlottenburg are both known for relatively fast appointments — typically within a week if you call directly rather than booking online. Avoid notaries in Prenzlauer Berg right now, waiting times are 3–4 weeks.",
+      "answer_provider_id": "a4b382b3",
+      "question_text": "Which Berlin notary has the shortest waiting times for GmbH formation right now?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_100",
+      "answer_text": "From a financial structuring perspective: the IBB loan counts as debt, not equity, so it does not dilute your cap table. Combine it with Exist or a BAFA Invest round for a non-dilutive funding stack that can carry you to a proper seed round.",
+      "answer_provider_id": "381c7073",
+      "question_text": "What is the process for applying to the IBB Gründungskredit in Berlin and how long does it take?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_101",
+      "answer_text": "Projekt Zukunft is useful primarily for networking and visibility — they run events, connect you with the Berlin Senate, and can open doors to public procurement pilots. The direct funding is modest. Worth a conversation, especially if your startup has a Berlin-city-relevance angle.",
+      "answer_provider_id": "f62b13db",
+      "question_text": "Is the Berlin Senat startup support program Projekt Zukunft worth engaging with at pre-seed?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 15,
+      "fit_confirmations": 10,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.5/5 · helpful for 15 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_102",
+      "answer_text": "We went through Sparkasse Berlin. The relationship manager matters enormously — ask for one with Firmenkunden experience, not retail. The process took us 8 weeks from first meeting to approval. Have a clean GmbH bank account and 6 months of bookkeeping ready.",
+      "answer_provider_id": "25e71427",
+      "question_text": "What is the process for applying to the IBB Gründungskredit in Berlin and how long does it take?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_103",
+      "answer_text": "We use a Steuerberater from Mitte even though we are in Kreuzberg — it makes no difference. What matters is startup experience. Ask specifically: have you set up a VSOP pool for a GmbH before? If they hesitate, keep looking.",
+      "answer_provider_id": "a5bcd359",
+      "question_text": "We are based in Neukölln and looking for a Steuerberater who understands startup equity and ESOP. Any recommendations in Berlin?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_104",
+      "answer_text": "I engaged with them for a mobility pilot with BVG. The Senate connection was genuine and moved faster than expected. If you are doing anything in smart city, mobility, or urban tech, they are a real door-opener to the Berlin public sector.",
+      "answer_provider_id": "1d63f0a3",
+      "question_text": "Is the Berlin Senat startup support program Projekt Zukunft worth engaging with at pre-seed?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_105",
+      "answer_text": "We got an appointment at Notariat Schöneberg within 5 days by calling first thing Monday morning and being flexible on time slots. Have all your documents ready in advance — the Musterprotokoll, shareholder list, and address proof — so you do not waste the slot.",
+      "answer_provider_id": "4582376b",
+      "question_text": "Which Berlin notary has the shortest waiting times for GmbH formation right now?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_106",
+      "answer_text": "At pure pre-seed with no product, the ROI of your time engaging with Projekt Zukunft is low. Come back to them once you have a working pilot or a live product — they will be more useful and you will have something to show.",
+      "answer_provider_id": "bdba83a8",
+      "question_text": "Is the Berlin Senat startup support program Projekt Zukunft worth engaging with at pre-seed?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_107",
+      "answer_text": "Heuking and Linklaters have startup teams in Berlin that handle the legal side of ESOPs. Your Steuerberater and your Anwalt need to work together on this — make sure both understand GmbH virtual share programs before you commit.",
+      "answer_provider_id": "c5250eaa",
+      "question_text": "We are based in Neukölln and looking for a Steuerberater who understands startup equity and ESOP. Any recommendations in Berlin?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_108",
+      "answer_text": "Some Berlin startup lawyers have standing relationships with notaries and can get you in faster. Worth asking your Rechtsanwalt before cold-calling notaries yourself.",
+      "answer_provider_id": "ac7f6e84",
+      "question_text": "Which Berlin notary has the shortest waiting times for GmbH formation right now?",
+      "help_categories": [
+        "proptech",
+        "B2B"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 11,
+      "fit_confirmations": 7,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.3/5 · helpful for 11 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_109",
+      "answer_text": "I recommend TaxPilot and Acconsis — both handle DATEV, payroll, and investor reporting for VC-backed startups. Pricing is typically €500–800 per month for early-stage. Avoid general Steuerberater who have no startup experience; they will slow you down at every funding round.",
+      "answer_provider_id": "6ee302a2",
+      "question_text": "Which tax advisor in Berlin is good for VC-backed startups and handles DATEV?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 24,
+      "fit_confirmations": 16,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 5.0/5 · helpful for 24 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_110",
+      "answer_text": "The fastest route is using a notary-certified Musterprotokoll (standard template) rather than a custom articles of association. This works well for up to 3 shareholders. Expect 2–4 weeks from notary appointment to entry in the Handelsregister. Use a Berlin notary that offers quick appointments — some can see you within 3 days.",
+      "answer_provider_id": "5bef6729",
+      "question_text": "What is the fastest way to form a GmbH in Berlin as a non-German founder?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_111",
+      "answer_text": "At pre-seed the term sheet should be simple. If it is longer than 5 pages, ask why. Watch out for full-ratchet anti-dilution — it is very founder-unfriendly. Also check the drag-along provisions and whether they require unanimous consent.",
+      "answer_provider_id": "48ceb170",
+      "question_text": "We are pre-seed and got our first term sheet. What should I watch out for before signing?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 22,
+      "fit_confirmations": 15,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.9/5 · helpful for 22 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_112",
+      "answer_text": "Key things to scrutinise: liquidation preferences (1x non-participating is standard, anything above that is a red flag), pro-rata rights, anti-dilution clauses, and whether the investor gets a board seat. Have a startup lawyer review it — not a general corporate lawyer.",
+      "answer_provider_id": "748c9bf0",
+      "question_text": "We are pre-seed and got our first term sheet. What should I watch out for before signing?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_113",
+      "answer_text": "You need to register with the Finanzamt for payroll tax (Lohnsteuer) and with the relevant Krankenkasse for social security contributions. Your Steuerberater should handle this. Budget around 20–22% employer social contributions on top of gross salary.",
+      "answer_provider_id": "ce7d5b68",
+      "question_text": "How do I set up payroll for my first two employees in Germany?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Top-expert answer · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "champion_matcher"
+    },
+    {
+      "id": "answer_114",
+      "answer_text": "We use Awicontax. Very startup-friendly, responsive on Slack, and they handle everything from VAT filings to investor due diligence support. Clear communication and fast onboarding.",
+      "answer_provider_id": "a013476e",
+      "question_text": "Which tax advisor in Berlin is good for VC-backed startups and handles DATEV?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 20,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.8/5 · helpful for 20 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_115",
+      "answer_text": "We used a Musterprotokoll and it took us about 3 weeks end to end. The bottleneck is always the Handelsregister, not the notary. Make sure you have your €25,000 share capital ready in a business account before the notary appointment — many founders delay here.",
+      "answer_provider_id": "93ce2450",
+      "question_text": "What is the fastest way to form a GmbH in Berlin as a non-German founder?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 19,
+      "fit_confirmations": 13,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.7/5 · helpful for 19 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_116",
+      "answer_text": "Do not forget the Berufsgenossenschaft registration — it is mandatory accident insurance and many founders miss it. Your Steuerberater should flag this but double-check.",
+      "answer_provider_id": "edf652ff",
+      "question_text": "How do I set up payroll for my first two employees in Germany?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_117",
+      "answer_text": "I have signed two term sheets. My biggest lesson: do not rush. Investors who pressure you to sign fast are a yellow flag. Take a week, talk to other founders who have worked with that investor, and get legal counsel.",
+      "answer_provider_id": "9d228fc2",
+      "question_text": "We are pre-seed and got our first term sheet. What should I watch out for before signing?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 17,
+      "fit_confirmations": 11,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.6/5 · helpful for 17 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_118",
+      "answer_text": "We used Personio for HR and our Steuerberater handled the actual payroll runs. For two employees, Personio is overkill — a simple spreadsheet and your tax advisor is enough at this stage.",
+      "answer_provider_id": "d6cc0453",
+      "question_text": "How do I set up payroll for my first two employees in Germany?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 13,
+      "fit_confirmations": 9,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.4/5 · helpful for 13 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_119",
+      "answer_text": "Also check out Founders Bay and Voldtax — both have strong startup practices in Berlin. Ask specifically whether they have handled a financing round before, and whether they can produce DATEV exports on request.",
+      "answer_provider_id": "387ad09c",
+      "question_text": "Which tax advisor in Berlin is good for VC-backed startups and handles DATEV?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 11,
+      "fit_confirmations": 7,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.3/5 · helpful for 11 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
+    },
+    {
+      "id": "answer_120",
+      "answer_text": "If speed is critical, some founders operate as a GbR or UG first and convert later. But for VC-backed companies, investors will want a GmbH. I would go straight to GmbH with a notary who specialises in startups — they know the shortcuts.",
+      "answer_provider_id": "01297aa9",
+      "question_text": "What is the fastest way to form a GmbH in Berlin as a non-German founder?",
+      "help_categories": [
+        "saas",
+        "B2B SaaS"
+      ],
+      "stage_context": "any",
+      "helpfulness_count": 10,
+      "fit_confirmations": 7,
+      "follow_up_requests": 0,
+      "trust_evidence": "Mentor with relevant experience · score 4.2/5 · helpful for 10 founders",
+      "provider_confirmed": true,
+      "visibility": "network_only",
+      "agent_source": "mentor_matcher"
     }
   ],
-  "_note": "PRD-shaped (§18) answer seed for the /ask demo. Stand-in for Supabase + pgvector; replace with real data layer per IMPLEMENTATION_PLAN.md."
+  "_note": "Generated from Supabase export by convert_supabase.py."
 }

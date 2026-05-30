@@ -39,20 +39,20 @@ def test_mentor_match_limit_respected():
     assert len(match_mentors("", {"industry": "saas"}, limit=2)) <= 2
 
 
-def test_ask_returns_tax_answer_for_demo_query():
-    # PRD §24 demo query
+def test_ask_returns_relevant_answer_for_demo_query():
+    # Demo query against the 120-answer Supabase dataset
     res = retrieve_answers(
-        "Which tax advisor is good for a VC-backed GmbH in Berlin?",
-        {"stage": "pre-seed"},
+        "Which Berlin VCs invest in climatetech pre-seed rounds?",
+        {"industry": "climatetech"},
     )
     assert res, "expected at least one answer card"
-    assert res[0]["matched_id"] == "answer_001", f"got {res[0]['matched_id']}"
-    assert "Tax/Admin" in res[0]["category"]
+    assert "climatetech" in res[0]["category"], f"got {res[0]['category']}"
     assert res[0]["trust_evidence"], "card must carry trust evidence"
+    assert res[0]["match_score"] > 0.5
 
 
 def test_ask_cards_carry_reasons_and_no_provider_identity():
-    res = retrieve_answers("I need a lawyer for GmbH incorporation", {"stage": "pre-incorporation"})
+    res = retrieve_answers("technical co-founder with energy systems background", {"industry": "climatetech"})
     assert res, "expected results"
     card = res[0]
     assert card["reasons"], "each card needs match reasons"
@@ -111,11 +111,12 @@ def test_record_fit_bumps_via_overlay():
     fit_store._bumps.clear()
     res = record_fit("answer_001")
     assert res["status"] == "recorded"
-    assert res["fit_confirmations"] == 9   # baseline 8 + 1 overlay
-    assert res["helpfulness_count"] == 13  # baseline 12 + 1 overlay
+    # answer_001 baseline in the Supabase dataset: fit 15, helpful 22
+    assert res["fit_confirmations"] == 16
+    assert res["helpfulness_count"] == 23
     # second bump accumulates, no double-count from disk writes
     res2 = record_fit("answer_001")
-    assert res2["fit_confirmations"] == 10
+    assert res2["fit_confirmations"] == 17
     fit_store._bumps.clear()
 
 
