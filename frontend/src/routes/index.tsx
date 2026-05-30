@@ -4,6 +4,7 @@ import { Sparkles, ArrowRight, Check, MessageCircle, Send, Search } from "lucide
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { NetworkGlobeSection } from "@/components/network-globe-section";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,6 +23,7 @@ function Landing() {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
+      <NetworkGlobeSection />
     </div>
   );
 }
