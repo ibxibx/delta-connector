@@ -69,7 +69,7 @@ Three of us build in parallel, with five Claude Code subagents in [`.claude/agen
 
 | Person | Owns | Assisting agent |
 | --- | --- | --- |
-| Nicolai | Data model + trust-graph core | — |
+| Nicolai | Ideation + Data model + trust-graph core | — |
 | Ian | Backend + agent orchestration | `backend-coder` |
 | Lauritz | Frontend (Lovable/React) + demo + seed data | `frontend-coder` |
 
