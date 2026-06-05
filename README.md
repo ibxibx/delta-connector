@@ -86,40 +86,19 @@ The walkthrough follows the full demo spine: Landing -> Onboarding -> Ask a ques
 
 <p align="center"><img src="pics/Screenshot 1.png" alt="Delta Connector landing page" width="900"></p>
 
-The marketing entry point. A full-bleed Berlin conference-hall hero sits behind a white glass
-gradient, with the value proposition front and centre: *the connective layer for Berlin's
-startup ecosystem - turning the trusted advice buried in WhatsApp groups into searchable,
-peer-sourced knowledge.* A live **Ask & Discover** search card (styled like a desktop window,
-`delta-connector.app / ask`) lets a visitor try a real question - e.g. *"Which tax advisor is
-good for a VC-backed GmbH in Berlin?"* - before signing up. Trust cues at the bottom:
-*Privacy-first by design - Peer-validated - Compounding value.*
+Hero landing with a live search card — try *"Which tax advisor is good for a VC-backed GmbH in Berlin?"* before signing up.
 
 ### 2. Dashboard - private trust metrics & agentic next steps
 
 <p align="center"><img src="pics/Screenshot 2.png" alt="Delta Connector dashboard" width="900"></p>
 
-The logged-in home for **Marco Bianchi** (AI SaaS - Pre-Seed - Non-EU Founder - Berlin). The
-glass sidebar carries the full navigation (Home, Ask, My Profile, Recommend, Graph, My Network,
-Dashboard). The **Metric Coach agent** surfaces a recommended next action and an at-a-glance
-metric strip: **Trust Score 19/100** (+ this week), Contribution, **Helpfulness 4.8/5**,
-Network Reach, **Categories 7/16**, and saved answers. Below, *Recommended next steps* are
-agent-generated and tied to the trust formula (add recommendations in underrepresented
-categories, answer a public question, request a follow-up from a verified Tax/Admin contributor),
-alongside a live *Recent activity* feed. Metrics are private by design.
+Marco's logged-in home: private trust score (19/100), helpfulness rating, category coverage, and agent-generated next steps.
 
 ### 3. Ask & Discover - the "answer fits" champion reveal
 
 <p align="center"><img src="pics/Screenshot 3.png" alt="Delta Connector answer fits champion reveal" width="900"></p>
 
-The heart of the product. The **Answer Retrieval agent** returns previous trusted answers as
-ranked cards with anonymized trust evidence (*"Top-expert answer - score 4.9/5 - helpful for 22
-founders"*) and a relevance match score. The provider stays hidden until the founder clicks
-**"This answer fits."** On confirmation, the answer text shrinks left and the matched champion's
-**full profile is revealed on the right** - here **Stefan Krawczyk**, Mentor - Fundraising & VC,
-Berlin Mitte, with bio, strengths (term-sheet negotiation, investor relations, B2B SaaS, Series A
-prep) and live stats (**Trust 87 - Helped 62 - Reach 2.1k**) - plus **Connect** (prefilled email)
-and **Send a message** actions. The Outreach agent drafts the follow-up; nothing is sent without
-the user's approval.
+After marking an answer as fitting, the anonymous provider is revealed — here Stefan Krawczyk, with full profile, stats, and one-click outreach.
 
 ## Core flows
 
