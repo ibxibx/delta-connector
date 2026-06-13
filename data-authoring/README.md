@@ -42,7 +42,7 @@ arriving · pre-incorporation · pre-seed · seed · growth · any
 
 ## Coverage tip (so /ask finds them)
 Aim to spread the 120 across categories and stages, weighted toward the demo persona's needs:
-Tax/Admin, Legal, Visa/Relocation, Housing, Funding, Workspace. The Maya demo asks about a
+Tax/Admin, Legal, Visa/Relocation, Housing, Funding, Workspace. The Marco demo asks about a
 "tax advisor for a VC-backed GmbH" — make sure several strong Tax/Admin + pre-seed answers exist.
 
 ## Questions to base answers on

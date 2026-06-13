@@ -8,7 +8,7 @@ You are the task planner for Delta Connector. Your job is to turn the PRD and th
 current state of the repo into a short, ordered list of the next tasks for each
 team member — not to write code.
 
-Read first: `README.md`, `pdr/product_requirements_document.md` (sections 13 MVP Scope,
+Read first: `README.md`, `prd/product_requirements_document.md` (sections 13 MVP Scope,
 23 Hackathon MVP Build Plan, 24 Demo Scenario), `docs/API_CONTRACT.md`, and the current
 `backend/` and frontend code.
 

@@ -1,9 +1,9 @@
 import csv, json, os
 
-D = r"C:\Users\damya\Projects\Delta-Connector\data-authoring"
-prof_p = os.path.join(D, "Supabase Snippet Export User Profiles CSV (1) (3).csv")
-feed_p = os.path.join(D, "Supabase Snippet Unified Q&A Feed (2).csv")
-ctx_p  = os.path.join(D, "Supabase Snippet Answers with Question Context.csv")
+D = os.path.dirname(os.path.abspath(__file__))
+prof_p = os.path.join(D, "user_profiles.csv")
+feed_p = os.path.join(D, "qa_feed.csv")
+ctx_p  = os.path.join(D, "answers_with_context.csv")
 
 with open(prof_p, encoding="utf-8") as f: profiles = list(csv.DictReader(f))
 with open(feed_p, encoding="utf-8") as f: feed = list(csv.DictReader(f))

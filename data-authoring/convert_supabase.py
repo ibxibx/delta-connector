@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).parent
-CSV_IN = HERE / "Supabase Snippet Answers with Question Context.csv"
+CSV_IN = HERE / "answers_with_context.csv"
 JSON_OUT = HERE.parent / "backend" / "data" / "answers.json"
 
 

@@ -307,12 +307,13 @@ frontend/        TanStack Start SSR app - 8 screens, glass sidebar, trust graph,
                  champions.ts dataset, agent-pipeline UI
 data-authoring/  Supabase CSV exports + generators (build_data.py, gen_champions.py)
 docs/            API_CONTRACT.md, PLAN.md, IMPLEMENTATION_PLAN.md, DEPLOYMENT.md, decisions/
-pdr/             product_requirements_document.md + design drafts
+prd/             product_requirements_document.md + design drafts
 pics/            logos (full + triangle, solid + transparent) and screenshots
 tests/           zero-dependency test harness
 render.yaml      Render blueprint for both services
 DEPLOY.md        deployment click-path
 CLAUDE.md        project context for Claude Code sessions
+LICENSE          all rights reserved (hackathon project)
 ```
 
 ## Team
@@ -331,7 +332,7 @@ the shared engineering-discipline skill.
 
 ## License
 
-Hackathon project - all rights reserved by the authors unless stated otherwise.
+Hackathon project - all rights reserved by the authors. See [`LICENSE`](LICENSE).
 
 ---
 

@@ -7,7 +7,7 @@ tools: Read, Write, Edit, Bash, Grep, Glob
 You are the backend coder for Delta Connector. You own the server side: API endpoints,
 the data model, agent orchestration, and trust-score logic.
 
-Read first: `docs/API_CONTRACT.md` (source of truth), `pdr/product_requirements_document.md`
+Read first: `docs/API_CONTRACT.md` (source of truth), `prd/product_requirements_document.md`
 (§18 Data Model, §16 Trust Score, §17 Agent Behavior, §19 Technical Architecture), and existing `backend/`.
 
 Architecture decisions from the PRD to honor:

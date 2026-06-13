@@ -1,7 +1,7 @@
 import json, os
 
-D = r"C:\Users\damya\Projects\Delta-Connector\data-authoring"
-OUT = r"C:\Users\damya\Projects\Delta-Connector\frontend\src\lib\champions.ts"
+D = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(D, "..", "frontend", "src", "lib", "champions.ts")
 data = json.load(open(os.path.join(D, "_data.json"), encoding="utf-8"))
 helpers = data["helpers"]
 questions = data["questions"]

@@ -3,7 +3,7 @@
 Project context for Claude Code sessions in this repo. Read `.claude/skills/engineering-discipline.md` and follow it: state assumptions, simplest solution, surgical changes, goal-driven execution.
 
 ## What this is
-The agentic trust layer for Berlin's startup ecosystem — a peer-validated network where founders find trusted answers, people, and resources, and where good answers become reusable knowledge that compounds. Full spec: `pdr/product_requirements_document.md`. Key decisions summarized in `README.md`. Endpoint shapes (source of truth): `docs/API_CONTRACT.md`.
+The agentic trust layer for Berlin's startup ecosystem — a peer-validated network where founders find trusted answers, people, and resources, and where good answers become reusable knowledge that compounds. Full spec: `prd/product_requirements_document.md`. Key decisions summarized in `README.md`. Endpoint shapes (source of truth): `docs/API_CONTRACT.md`.
 
 Two core flows (the demo): (1) join → profile → optionally recommend 1–8 people → see private trust metrics; (2) ask a question → get matched previous trusted answers with anonymized trust evidence → mark as fitting / request follow-up / post publicly.
 
